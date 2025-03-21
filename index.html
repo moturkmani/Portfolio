@@ -7,32 +7,6 @@
     <!-- Favicon -->
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="style.css">
-    <style>
-        #upcoming-images {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Two images side by side */
-            gap: 20px; /* Space between images */
-            justify-content: center; /* Center-align the grid items */
-            padding: 10px; /* Optional: Add padding around the grid */
-        }
-
-        .upcoming-tile {
-            background-color: #000000; /* Tile background color */
-            border: 7px solid gold; /* Golden border for a picture frame effect */
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
-            overflow: hidden; /* Ensures no overflow from images */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px; /* Optional: Add rounded corners */
-        }
-
-        .upcoming-tile img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain; /* Preserve aspect ratio and fit image within the tile */
-        }
-    </style>
 </head>
 <body>
 
@@ -45,30 +19,30 @@
 
     <section>
         <!-- About Me Tab -->
-        <div id="About-me" class="tab-content active">
+        <div id="about-me" class="tab-content active">
             <h1>About Me</h1>
             <p>This is where you can learn more about who I am, my journey, and the projects I've been working on. Dive into the tabs to explore my experience, past projects, and the fun side quests I've embarked on along the way!</p>
         </div>
 
         <!-- Experience Tab -->
-        <div id="Experience" class="tab-content">
+        <div id="experience" class="tab-content">
             <h1>Experience</h1>
             <p>Here, you can read about my professional background, the roles I’ve held, and the impact I’ve made through my work. From early jobs to my current role, each experience has shaped me into who I am today.</p>
             <!-- Example Content: Add your personal experience details here -->
         </div>
 
         <!-- Projects Tab -->
-        <div id="Projects" class="tab-content">
+        <div id="projects" class="tab-content">
             <h1>Projects</h1>
             <p>This is where I showcase the projects I’m most proud of. You’ll find everything from personal projects to collaborations that highlight my skills and dedication. Let’s dive into the creative and technical work I’ve been up to!</p>
             <div id="gallery-images"></div> <!-- You can dynamically add images or content related to your projects -->
         </div>
 
         <!-- Side Quests Tab -->
-        <div id="Side-Quests" class="tab-content">
+        <div id="side-quests" class="tab-content">
             <h1>Side Quests</h1>
             <p>Life isn’t just about work—sometimes it’s about the adventures and fun side projects that keep things interesting. Here are some of my passions and activities that I’ve pursued in my spare time, from hobbies to volunteer work and everything in between.</p>
-            <div id="Side Quests"></div> <!-- You can dynamically add images related to side projects or activities -->
+            <div id="upcoming-images"></div> <!-- You can dynamically add images related to side projects or activities -->
         </div>
     </section>
 
