@@ -62,7 +62,7 @@
         <a href="#" onclick="showTab('about-me')"><span>About Me</span></a>
         <a href="#" onclick="showTab('experience')"><span>Experience</span></a>
         <a href="#" onclick="showTab('projects')"><span>Projects</span></a>
-        <a href="#" onclick="showTab('side-quests')"><span>Side Quests</span></a>
+        <a href="#" onclick="showTab('hobbies')"><span>Hobbies</span></a>
     </nav>
 
     <section>
@@ -84,10 +84,10 @@
             <div id="projects-content"></div>
         </div>
 
-        <!-- Side Quests Tab -->
-        <div id="side-quests" class="tab-content">
+        <!-- Hobbies Tab -->
+        <div id="hobbies" class="tab-content">
             
-            <div id="side-quests-content"></div>
+            <div id="hobbies-content"></div>
         </div>
     </section>
 
@@ -115,8 +115,8 @@
                 loadContent('experience.html', 'experience-content');
             } else if (tabId === 'projects') {
                 loadContent('projects.html', 'projects-content');
-            } else if (tabId === 'side-quests') {
-                loadContent('side-quests.html', 'side-quests-content');
+            } else if (tabId === 'hobbies') {
+                loadContent('hobbies.html', 'hobbies-content');
             }
         }
 
