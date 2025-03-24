@@ -83,7 +83,7 @@ nav a:hover {
 /* Back to Top Button */
 #back-to-top {
     position: fixed;
-    bottom: 20px;
+    bottom: 100px; /* Increased from 50px to 100px to avoid overlapping icons */
     left: 50%;
     transform: translateX(-50%);
     background-color: #333;
@@ -95,10 +95,17 @@ nav a:hover {
     font-size: 16px;
     display: none; /* Initially hidden */
     transition: opacity 0.3s ease-in-out, bottom 0.3s ease-in-out;
-    z-index: 1000; /* Ensure it appears above other elements */
+    z-index: 1000; /* Ensures it stays above other elements */
 }
 
 #back-to-top:hover {
     background-color: yellow;
     color: black;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+    #back-to-top {
+        bottom: 80px; /* Adjusted for mobile screens */
+    }
 }
