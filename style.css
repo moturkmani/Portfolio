@@ -1,6 +1,12 @@
 /* General Styles for Content */
-.tab-content {
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
     font-family: Arial, sans-serif;
+}
+
+.tab-content {
     line-height: 1.6;
     padding: 20px;
     background-color: #706F70;
@@ -17,21 +23,27 @@ nav {
     text-align: center;
     display: flex;
     justify-content: center;
-    gap: 15px; /* Space between tabs */
+    gap: 10px;
+    flex-wrap: wrap;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 nav a {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 150px; /* Uniform tab width */
-    height: 50px; /* Uniform tab height */
+    min-width: 100px;
+    max-width: 150px;
+    height: 50px;
     background-color: #333;
-    color: black;
+    color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     transition: background-color 0.3s ease;
     border-radius: 5px;
+    flex-grow: 1;
+    white-space: nowrap;
 }
 
 nav a:hover {
@@ -56,7 +68,7 @@ nav a:hover {
 .social-media {
     display: flex;
     justify-content: center;
-    gap: 15px; /* Space between icons */
+    gap: 15px;
     padding: 20px;
     margin-top: 20px;
 }
@@ -74,31 +86,36 @@ nav a:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
     nav {
-        flex-wrap: wrap; /* Allows tabs to wrap instead of going off-screen */
+        flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
+        gap: 5px;
     }
     
     nav a {
-        flex: 1 1 40%; /* Makes sure each tab takes up about half of the screen width */
-        max-width: 140px; /* Prevents them from being too wide */
-        font-size: 16px; /* Adjust font size for mobile */
+        flex: 1 1 auto;
+        font-size: 14px;
+        padding: 10px;
+        max-width: 120px;
     }
 }
 
 /* Back to Top Button */
-/* Add padding at the bottom to prevent overlap */
-.tab-content {
-    padding-bottom: 120px; /* Adds space so the button doesn’t cover text */
-}
-
-/* Back to Top Button Fix */
 #back-to-top {
-    bottom: 120px; /* Moves it higher to prevent covering text */
+    position: relative;
+    margin: 20px auto;
+    background-color: #333;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    text-align: center;
+    transition: opacity 0.3s ease-in-out;
 }
 
-@media (max-width: 768px) {
-    #back-to-top {
-        bottom: 100px; /* Adjust for smaller screens */
-    }
+#back-to-top:hover {
+    background-color: yellow;
+    color: black;
 }
