@@ -83,18 +83,19 @@ nav a:hover {
 /* Back to Top Button */
 #back-to-top {
     position: fixed;
-    bottom: 50px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     background-color: #333;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
     display: none; /* Initially hidden */
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out, bottom 0.3s ease-in-out;
+    z-index: 1000; /* Ensure it appears above other elements */
 }
 
 #back-to-top:hover {
