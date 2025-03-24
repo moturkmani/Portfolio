@@ -98,14 +98,3 @@ nav a:hover {
     z-index: 1000; /* Ensures it stays above other elements */
 }
 
-#back-to-top:hover {
-    background-color: yellow;
-    color: black;
-}
-
-/* Adjust for smaller screens */
-@media (max-width: 768px) {
-    #back-to-top {
-        bottom: 80px; /* Adjusted for mobile screens */
-    }
-}
