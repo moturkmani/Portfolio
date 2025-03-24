@@ -6,6 +6,12 @@
     <title>My Portfolio</title>
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Make the text on the tabs white */
+        nav a span {
+            color: white;
+        }
+    </style>
 </head>
 <body>
 
@@ -17,7 +23,7 @@
     </nav>
 
     <section>
-        <!-- About Me Tab -->
+        <!-- About Me Tab (Visible by default) -->
         <div id="about-me" class="tab-content active">
             <h1>About Me</h1>
             <div id="about-me-content"></div>
@@ -59,6 +65,7 @@
             tabs.forEach(tab => tab.classList.remove('active'));
             document.getElementById(tabId).classList.add('active');
 
+            // Load the respective content based on the tab clicked
             if (tabId === 'about-me') {
                 loadContent('about-me.html', 'about-me-content');
             } else if (tabId === 'experience') {
@@ -80,7 +87,7 @@
                 .catch(error => console.log("Error loading content:", error));
         }
 
-        // Initial tab load (optional)
+        // Initial tab load (only About Me content will be shown on page load)
         document.addEventListener('DOMContentLoaded', () => {
             loadContent('about-me.html', 'about-me-content');
         });
