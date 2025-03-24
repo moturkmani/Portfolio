@@ -12,7 +12,9 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr); /* 4 equal columns for desktop */
             gap: 10px;
-            margin: 20px 0;
+            margin: 20px auto; /* Center the nav */
+            width: fit-content; /* Makes sure it only takes up as much space as needed */
+            justify-content: center; /* Centers the grid items */
         }
 
         nav a {
