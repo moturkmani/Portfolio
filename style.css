@@ -80,3 +80,24 @@ nav a:hover {
         flex-wrap: wrap; /* Allows wrapping on smaller screens */
     }
 }
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: none; /* Initially hidden */
+    transition: opacity 0.3s ease-in-out;
+}
+
+#back-to-top:hover {
+    background-color: yellow;
+    color: black;
+}
