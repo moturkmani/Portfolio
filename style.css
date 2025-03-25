@@ -113,12 +113,12 @@ nav a:hover {
     }
 }
 .certifications-list {
-    padding-left: 12px; /* Remove extra padding */
+    padding-left: 15px; /* Remove extra padding */
     margin-left: 0;  /* Remove margin on the left */
 }
 
 .certifications-list li {
-    padding-left: 5px; /* Adds space between bullet and text */
+    padding-left: 1px; /* Adds space between bullet and text */
 }
 #back-to-top {
     position: fixed;
