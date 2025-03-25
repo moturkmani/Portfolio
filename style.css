@@ -13,13 +13,15 @@ html, body {
 .tab-content {
     line-height: 1.6;
     padding: 20px;
+    padding-left: 40px; /* Add extra left padding */
+    padding-right: 40px; /* Add extra right padding */
     background-color: #706F70;
     border-radius: 10px;
     margin: 20px auto;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     color: black;
-    width: calc(100% - 40px); /* Keeps small white space on both sides */
-    max-width: 1500px; /* Prevents content from being too wide on large screens */
+    width: calc(100% - 80px); /* Keeps white space on both sides */
+    max-width: 1200px; /* Prevents content from being too wide on large screens */
 }
 
 /* Tab Navigation */
@@ -91,6 +93,12 @@ nav a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .tab-content {
+        width: calc(100% - 20px); /* Add some space on smaller screens */
+        padding-left: 10px; /* Reduced padding */
+        padding-right: 10px; /* Reduced padding */
+    }
+    
     nav {
         flex-wrap: wrap;
         justify-content: center;
