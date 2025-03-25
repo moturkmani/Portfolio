@@ -13,7 +13,7 @@ html, body {
 .tab-content {
     display: none; /* Hide all tab content by default */
     line-height: 1.6;
-    padding: 10px;
+    padding: 5px;
     background-color: #706F70;
     border-radius: 10px;
     margin: 20px auto; /* Centers the content and adds spacing */
@@ -58,6 +58,7 @@ nav a {
     flex-grow: 1;
     white-space: nowrap;
     font-weight: bold;  /* Makes the text bold */
+    border: 2px solid gold; /* Adds a golden border */
 }
 
 nav a:hover {
