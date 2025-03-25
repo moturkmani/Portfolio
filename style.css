@@ -35,7 +35,7 @@ nav {
     text-align: center;
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 20px; /* Controls the spacing between the tabs */
     flex-wrap: wrap;
     max-width: 1200px; /* Align with tab-content width */
     width: calc(100% - 40px); /* Leaves white space on both sides */
