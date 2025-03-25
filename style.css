@@ -20,7 +20,7 @@ html, body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     color: black;
     max-width: 1200px; /* Limits width on large screens */
-    width: calc(100% - 40px); /* Leaves white space on both sides */
+    width: calc(100% - 40px); /* Leaves black space on both sides */
     box-sizing: border-box; /* Includes padding in width calculation */
 }
 
@@ -35,7 +35,7 @@ nav {
     text-align: center;
     display: flex;
     justify-content: center;
-    gap: 20px; /* Controls the spacing between the tabs */
+    gap: 40px; /* Controls the spacing between the tabs */
     flex-wrap: wrap;
     max-width: 1200px; /* Align with tab-content width */
     width: calc(100% - 40px); /* Leaves white space on both sides */
