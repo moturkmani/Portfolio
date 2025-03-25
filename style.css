@@ -35,20 +35,20 @@ nav {
     text-align: center;
     display: flex;
     justify-content: center;
-    gap: 25px; /* Controls the spacing between the tabs */
+    gap: 20px; /* Controls the spacing between the tabs */
     flex-wrap: wrap;
     max-width: 1200px; /* Align with tab-content width */
     width: calc(100% - 40px); /* Leaves white space on both sides */
-    margin: 10 auto 10px auto; /* Add bottom margin to space tabs from content */
+    margin: 5 auto 5px auto; /* Add bottom margin to space tabs from content */
 }
 
 nav a {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 150px;  /* Minimum width of each tab */
-    max-width: 200px;  /* Maximum width of each tab */
-    height: 50px;
+    min-width: 250px;  /* Minimum width of each tab */
+    max-width: 300px;  /* Maximum width of each tab */
+    height: 25px;
     background-color: #737272;
     color: white;
     text-decoration: none;
