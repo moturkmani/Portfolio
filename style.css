@@ -11,6 +11,7 @@ html, body {
 }
 
 .tab-content {
+    display: none; /* Hide all tab content by default */
     line-height: 1.6;
     padding: 20px;
     background-color: #706F70;
@@ -21,6 +22,10 @@ html, body {
     max-width: 1200px; /* Limits width on large screens */
     width: calc(100% - 40px); /* Leaves white space on both sides */
     box-sizing: border-box; /* Includes padding in width calculation */
+}
+
+.tab-content.active {
+    display: block; /* Show only the active tab */
 }
 
 /* Tab Navigation */
