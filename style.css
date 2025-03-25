@@ -39,7 +39,7 @@ nav {
     flex-wrap: wrap;
     max-width: 1200px; /* Align with tab-content width */
     width: calc(100% - 40px); /* Leaves white space on both sides */
-    margin: 60 auto 20px auto; /* Add bottom margin to space tabs from content */
+    margin: 10 auto 10px auto; /* Add bottom margin to space tabs from content */
 }
 
 nav a {
