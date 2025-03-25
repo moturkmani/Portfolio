@@ -31,14 +31,15 @@ html, body {
 /* Tab Navigation */
 nav {
     background-color: #000000;
-    padding: 10px 20px;
+    padding: 10px 0;
     text-align: center;
     display: flex;
     justify-content: center;
     gap: 10px;
     flex-wrap: wrap;
-    max-width: 100%;
-    overflow: hidden;
+    max-width: 1200px; /* Align with tab-content width */
+    width: calc(100% - 40px); /* Leaves white space on both sides */
+    margin: 0 auto 20px auto; /* Add bottom margin to space tabs from content */
 }
 
 nav a {
@@ -80,9 +81,9 @@ nav a:hover {
 .social-media {
     display: flex;
     justify-content: center;
-    gap: 5px;
-    padding: 5px;
-    margin-top: 5px; /* Reduce space between social icons and Back to Top button */
+    gap: 10px;
+    padding: 10px;
+    margin-top: 10px; /* Reduce space between social icons and Back to Top button */
 }
 
 .social-media a {
@@ -90,8 +91,8 @@ nav a:hover {
 }
 
 .social-icon {
-    width: 55px;
-    height: 55px;
+    width: 75px;
+    height: 75px;
     object-fit: cover;
 }
 
@@ -121,13 +122,13 @@ nav a:hover {
 #back-to-top {
     position: relative;
     margin: 10px auto;
-    background-color: #737272;
+    background-color: #b5b5b5;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 16px;
     display: block;
     text-align: center;
     transition: opacity 0.3s ease-in-out;
