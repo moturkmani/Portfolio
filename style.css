@@ -16,7 +16,7 @@ html, body {
     padding: 15px;
     background-color: #706F70;
     border-radius: 10px;
-    margin: 10px auto; /* Centers the content and adds spacing */
+    margin: 20px auto; /* Centers the content and adds spacing */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     color: black;
     max-width: 1200px; /* Limits width on large screens */
