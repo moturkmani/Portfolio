@@ -19,7 +19,7 @@ html, body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     color: black;
     width: calc(100% - 40px); /* Keeps small white space on both sides */
-    max-width: 1200px; /* Prevents content from being too wide on large screens */
+    max-width: 2400px; /* Prevents content from being too wide on large screens */
 }
 
 /* Tab Navigation */
