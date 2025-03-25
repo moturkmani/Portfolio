@@ -52,12 +52,15 @@
     <button id="back-to-top" onclick="scrollToTop()">Back to Top</button>
     
     <script>
-        // Handle tab switching
         function showTab(tabId) {
+            // Hide all tab contents and remove the active class from all
             const tabs = document.querySelectorAll('.tab-content');
             tabs.forEach(tab => tab.classList.remove('active'));
+
+            // Show the clicked tab and add the active class
             document.getElementById(tabId).classList.add('active');
 
+            // Dynamically load content for the clicked tab
             if (tabId === 'about-me') {
                 loadContent('about-me.html', 'about-me-content');
             } else if (tabId === 'experience') {
@@ -69,7 +72,6 @@
             }
         }
 
-        // Load content from external HTML files into the tab
         function loadContent(fileName, elementId) {
             fetch(fileName)
                 .then(response => response.text())
@@ -79,29 +81,19 @@
                 .catch(error => console.log("Error loading content:", error));
         }
 
-        // Initial tab load (only About Me content will be shown on page load)
+        // Load About Me content on initial load
         document.addEventListener('DOMContentLoaded', () => {
             loadContent('about-me.html', 'about-me-content');
         });
 
-        // Show or hide Back to Top button when scrolling
-        window.onscroll = function() { toggleBackToTop() };
-
-        function toggleBackToTop() {
+        // Back to Top functionality
+        window.onscroll = function() {
             const button = document.getElementById("back-to-top");
-            const isScrollable = document.documentElement.scrollHeight > document.documentElement.clientHeight;
-            const scrolledDown = document.body.scrollTop > 200 || document.documentElement.scrollTop > 200;
+            button.style.display = window.scrollY > 200 ? "block" : "none";
+        };
 
-            if (isScrollable && scrolledDown) {
-                button.style.display = "block";
-            } else {
-                button.style.display = "none";
-            }
-        }
-
-        // Smooth scrolling to top
         function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: "smooth" });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 
