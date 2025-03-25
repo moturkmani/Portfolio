@@ -46,8 +46,8 @@ nav a {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 100px;
-    max-width: 150px;
+    min-width: 100px;  /* Minimum width of each tab */
+    max-width: 150px;  /* Maximum width of each tab */
     height: 50px;
     background-color: #737272;
     color: white;
@@ -57,6 +57,7 @@ nav a {
     border-radius: 5px;
     flex-grow: 1;
     white-space: nowrap;
+    font-weight: bold;  /* Makes the text bold */
 }
 
 nav a:hover {
