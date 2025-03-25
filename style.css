@@ -96,18 +96,11 @@ nav a:hover {
     object-fit: cover;
 }
 
-/* Responsive Design */
+/* Responsive Design for Mobile */
 @media (max-width: 768px) {
-    .tab-content {
-        width: calc(100% - 20px); /* Add some space on smaller screens */
-        margin: 20px auto; /* Centers the content */
-        padding: 15px; /* Adjust padding for smaller screens */
-    }
-    
     nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 5px;
+        gap: 20px; /* Set the gap to 20px for mobile as well */
+        justify-content: space-between; /* Adjust how tabs are spaced */
     }
     
     nav a {
