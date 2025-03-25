@@ -1,7 +1,7 @@
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #000000;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 20px;
 }
@@ -24,10 +24,11 @@ body {
 /* Image Grid */
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Makes the grid responsive */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Creates responsive grid */
     gap: 15px;
     justify-items: center; /* Centers the grid items horizontally */
     margin: 0 auto; /* Ensures the grid is centered */
+    width: 100%; /* Ensures the grid fills the width of the container */
 }
 
 /* Styling for Images */
@@ -123,9 +124,18 @@ body {
 @media (max-width: 768px) {
     .image-grid {
         grid-template-columns: repeat(2, 1fr); /* 2 images per row on mobile */
+        width: calc(100% - 40px); /* Ensures grid doesn't take up full width, leaving space on sides */
+        margin: 0 auto; /* Center the grid */
     }
 
     .image-block img {
         height: 150px; /* Adjust height on mobile to fit 2 images per row */
+    }
+
+    /* Centering the content for smaller screen sizes with black background on the sides */
+    .tab-content {
+        width: calc(100% - 40px); /* Ensures content has margins on the sides */
+        max-width: 100%; /* Ensure it takes up the full available space */
+        margin: 20px auto;
     }
 }
