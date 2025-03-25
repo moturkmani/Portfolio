@@ -46,8 +46,8 @@ nav a {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 250px;  /* Minimum width of each tab */
-    max-width: 300px;  /* Maximum width of each tab */
+    min-width: 150px;  /* Minimum width of each tab */
+    max-width: 200px;  /* Maximum width of each tab */
     height: 25px;
     background-color: #737272;
     color: white;
