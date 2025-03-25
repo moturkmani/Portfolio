@@ -5,56 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="icon" href="favicon.png" type="image/png">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Basic styling for tabs */
-        nav {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 equal columns for desktop */
-            gap: 10px;
-            margin: 20px auto; /* Center the nav */
-            width: fit-content; /* Makes sure it only takes up as much space as needed */
-            justify-content: center; /* Centers the grid items */
-        }
-
-        nav a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #333;
-            padding: 10px 20px;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            transition: background-color 0.3s ease;
-        }
-
-        nav a:hover {
-            background-color: #444;
-        }
-
-        /* Responsive styling for mobile devices */
-        @media (max-width: 768px) {
-            nav {
-                grid-template-columns: 1fr 1fr; /* 2 columns on mobile */
-            }
-        }
-
-        /* Styling for active tabs */
-        nav a span {
-            color: white;
-        }
-
-        /* Make the text on the tabs white */
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css"> <!-- External CSS file -->
 </head>
 <body>
 
@@ -68,25 +19,21 @@
     <section>
         <!-- About Me Tab (Visible by default) -->
         <div id="about-me" class="tab-content active">
-            
             <div id="about-me-content"></div>
         </div>
 
         <!-- Experience Tab -->
         <div id="experience" class="tab-content">
-            
             <div id="experience-content"></div>
         </div>
 
         <!-- Projects Tab -->
         <div id="projects" class="tab-content">
-            
             <div id="projects-content"></div>
         </div>
 
         <!-- Hobbies Tab -->
         <div id="hobbies" class="tab-content">
-            
             <div id="hobbies-content"></div>
         </div>
     </section>
@@ -110,8 +57,7 @@
             const tabs = document.querySelectorAll('.tab-content');
             tabs.forEach(tab => tab.classList.remove('active'));
             document.getElementById(tabId).classList.add('active');
-    
-            // Load the respective content based on the tab clicked
+
             if (tabId === 'about-me') {
                 loadContent('about-me.html', 'about-me-content');
             } else if (tabId === 'experience') {
@@ -122,7 +68,7 @@
                 loadContent('hobbies.html', 'hobbies-content');
             }
         }
-    
+
         // Load content from external HTML files into the tab
         function loadContent(fileName, elementId) {
             fetch(fileName)
@@ -132,30 +78,32 @@
                 })
                 .catch(error => console.log("Error loading content:", error));
         }
-    
+
         // Initial tab load (only About Me content will be shown on page load)
         document.addEventListener('DOMContentLoaded', () => {
             loadContent('about-me.html', 'about-me-content');
         });
-    
+
         // Show or hide Back to Top button when scrolling
         window.onscroll = function() { toggleBackToTop() };
-    
+
         function toggleBackToTop() {
             const button = document.getElementById("back-to-top");
-            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            const isScrollable = document.documentElement.scrollHeight > document.documentElement.clientHeight;
+            const scrolledDown = document.body.scrollTop > 200 || document.documentElement.scrollTop > 200;
+
+            if (isScrollable && scrolledDown) {
                 button.style.display = "block";
             } else {
                 button.style.display = "none";
             }
         }
-    
+
         // Smooth scrolling to top
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: "smooth" });
         }
     </script>
-    
 
 </body>
 </html>
