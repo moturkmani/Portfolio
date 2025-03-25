@@ -13,7 +13,7 @@ const nextImage = document.getElementById('next-image');
 images.forEach((image, index) => {
     image.addEventListener('click', () => {
         currentImageIndex = index;
-        expandedImage.src = image.src;
+        expandedImage.src = image.src; // Set the clicked image as the modal content
         modal.style.display = "flex"; // Show the modal
     });
 });
