@@ -80,9 +80,9 @@ nav a:hover {
 .social-media {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 5px;
     padding: 10px;
-    margin-top: 10px; /* Reduce space between social icons and Back to Top button */
+    margin-top: 5px; /* Reduce space between social icons and Back to Top button */
 }
 
 .social-media a {
@@ -90,8 +90,8 @@ nav a:hover {
 }
 
 .social-icon {
-    width: 75px;
-    height: 75px;
+    width: 55px;
+    height: 55px;
     object-fit: cover;
 }
 
@@ -121,13 +121,13 @@ nav a:hover {
 #back-to-top {
     position: relative;
     margin: 10px auto;
-    background-color: #b5b5b5;
+    background-color: #737272;
     color: white;
-    padding: 12px 24px;
+    padding: 10px 20px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 10px;
     display: block;
     text-align: center;
     transition: opacity 0.3s ease-in-out;
