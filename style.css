@@ -112,7 +112,14 @@ nav a:hover {
         max-width: 120px;
     }
 }
+.certifications-list {
+    padding-left: 0; /* Remove extra padding */
+    margin-left: 0;  /* Remove margin on the left */
+}
 
+.certifications-list li {
+    padding-left: 20px; /* Adds space between bullet and text */
+}
 #back-to-top {
     position: fixed;
     bottom: 40px; /* Increase this value to move the button up */
