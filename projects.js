@@ -1,28 +1,24 @@
-// Get all project images
-const images = document.querySelectorAll('.expandable-image');
-const modal = document.getElementById('image-modal');
-const expandedImage = document.getElementById('expanded-image');
-const closeModal = document.querySelector('.close-modal');
+// Get all project titles and project details containers
+const projectTitles = document.querySelectorAll('.project-title');
 
-// Open the modal and display the clicked image
-images.forEach((image) => {
-    image.addEventListener('click', () => {
-        expandedImage.src = image.src; // Set the clicked image as the modal content
-        modal.style.display = 'flex'; // Show the modal
-        document.body.classList.add('modal-background-blue'); // Apply blue background tint
+// Add click event listener to each project title
+projectTitles.forEach((title) => {
+    title.addEventListener('click', () => {
+        const projectId = title.getAttribute('data-project');
+        const projectDetails = document.getElementById(projectId);
+
+        // If the clicked project details are already open, close them
+        if (projectDetails.style.display === 'block') {
+            projectDetails.style.display = 'none';
+        } else {
+            // Close all other project details
+            const allProjectDetails = document.querySelectorAll('.project-details');
+            allProjectDetails.forEach(detail => {
+                detail.style.display = 'none';
+            });
+
+            // Open the clicked project's details
+            projectDetails.style.display = 'block';
+        }
     });
-});
-
-// Close the modal when clicking the close button (X)
-closeModal.addEventListener('click', () => {
-    modal.style.display = 'none'; // Hide the modal
-    document.body.classList.remove('modal-background-blue'); // Remove the background tint
-});
-
-// Close modal if clicked anywhere outside the image
-modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.style.display = 'none'; // Hide the modal
-        document.body.classList.remove('modal-background-blue'); // Remove the background tint
-    }
 });
