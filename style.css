@@ -35,7 +35,7 @@ nav {
     background-color: #000000;
     padding: 10px 0;
     display: flex;
-    justify-content: center; /* Ensures the tabs are centered */
+    justify-content: space-evenly; /* Distribute buttons evenly */
     gap: 20px; /* Controls the spacing between the tabs */
     flex-wrap: nowrap; /* Prevents wrapping on desktop */
     width: 100%;
