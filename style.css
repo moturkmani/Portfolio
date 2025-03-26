@@ -112,6 +112,67 @@ nav a:hover {
         max-width: 120px;
     }
 }
+projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Project Title Styling */
+.project-title {
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #2a2a2a;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    border: 2px solid #FFD700;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect on project titles */
+.project-title:hover {
+    background-color: #FFD700;
+    color: black;
+}
+
+/* Project Details - Initially hidden */
+.project-details {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    color: #333;
+}
+
+/* Image inside the project details */
+.project-details img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin-top: 10px;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .projects-container {
+        align-items: center; /* Center the projects on mobile */
+    }
+
+    .project-title {
+        width: 80%; /* Make project titles full width on mobile */
+        text-align: center;
+    }
+
+    .project-details {
+        width: 90%; /* Ensure details are centered on mobile */
+    }
+}
 .certifications-list {
     padding-left: 15px; /* Remove extra padding */
     margin-left: 0;  /* Remove margin on the left */
