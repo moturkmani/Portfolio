@@ -112,66 +112,80 @@ nav a:hover {
         max-width: 120px;
     }
 }
-projects-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-/* Project Title Styling */
-.project-title {
-    cursor: pointer;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #2a2a2a;
-    color: white;
-    border-radius: 5px;
-    text-align: center;
-    border: 2px solid #FFD700;
-    transition: background-color 0.3s ease;
-}
-
-/* Hover effect on project titles */
-.project-title:hover {
-    background-color: #FFD700;
-    color: black;
-}
-
-/* Project Details - Initially hidden */
-.project-details {
-    display: none;
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #e0e0e0;
-    border-radius: 5px;
-    color: #333;
-}
-
-/* Image inside the project details */
-.project-details img {
+/* Container for the project images */
+.project-images-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Up to 5 images per row on desktop */
+    gap: 15px; /* Gap between images */
+    justify-items: center;
+    margin: 0 auto;
     width: 100%;
-    max-width: 300px;
-    height: auto;
-    display: block;
-    margin-top: 10px;
 }
 
-/* Responsive Design for Mobile */
+.project-images-container img {
+    width: 100%;
+    height: 200px; /* Fixed size for images */
+    object-fit: cover;
+    border: 2px solid gold; /* Golden border */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out; /* Hover effect */
+}
+
+/* Hover effect for the images */
+.project-images-container img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
-    .projects-container {
-        align-items: center; /* Center the projects on mobile */
+    .project-images-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 images per row on mobile */
     }
+    .project-images-container img {
+        height: 150px; /* Adjust image size for mobile */
+    }
+}
 
-    .project-title {
-        width: 80%; /* Make project titles full width on mobile */
-        text-align: center;
-    }
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 
-    .project-details {
-        width: 90%; /* Ensure details are centered on mobile */
-    }
+/* Modal Image */
+.modal-content {
+    max-width: 90%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* Close Button (X) */
+.close-modal {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    z-index: 1001; /* Above the image */
+    user-select: none;
+}
+
+/* Modal Background Change */
+.modal-background-blue {
+    background-color: rgba(0, 0, 255, 0.3); /* Slight blue tint to background when modal is open */
 }
 .certifications-list {
     padding-left: 15px; /* Remove extra padding */
