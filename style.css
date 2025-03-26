@@ -117,6 +117,9 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    max-width: 1200px; /* Ensure container width matches other tabs */
+    width: calc(100% - 40px); /* Leaves black space on both sides */
+    margin: 0 auto; /* Center the container */
 }
 
 /* Project Title Styling */
@@ -144,6 +147,7 @@ nav a:hover {
     background-color: #e0e0e0;
     border-radius: 5px;
     color: #333;
+    width: 100%; /* Ensure it expands to full width */
 }
 
 /* Image grid for each project */
