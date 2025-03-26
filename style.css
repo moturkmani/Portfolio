@@ -8,7 +8,6 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
 }
 
 /* Tab Content */
@@ -37,7 +36,7 @@ nav {
     display: flex;
     justify-content: center; /* Ensures the tabs are centered */
     gap: 20px; /* Controls the spacing between the tabs */
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Wraps tabs on smaller screens */
     width: 100%;
     max-width: 1200px; /* Align with tab-content width */
     margin: 0 auto; /* Center navigation */
