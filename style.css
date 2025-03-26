@@ -8,6 +8,7 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 /* Tab Content */
@@ -33,14 +34,13 @@ html, body {
 nav {
     background-color: #000000;
     padding: 10px 0;
-    text-align: center;
     display: flex;
-    justify-content: space-between; /* Distributes space between the buttons */
+    justify-content: center; /* Ensures the tabs are centered */
     gap: 20px; /* Controls the spacing between the tabs */
     flex-wrap: wrap;
+    width: 100%;
     max-width: 1200px; /* Align with tab-content width */
-    width: calc(100% - 60px); /* Leaves white space on both sides */
-    margin: 5 auto 5px auto; /* Add bottom margin to space tabs from content */
+    margin: 0 auto; /* Center navigation */
 }
 
 /* Tab Buttons (All Tabs) */
@@ -135,8 +135,8 @@ nav {
 /* Responsive Design for Mobile */
 @media (max-width: 768px) {
     nav {
-        gap: 10px; /* Decrease the gap between the tabs on mobile */
-        flex-wrap: wrap;
+        gap: 10px; /* Set the gap to 10px for mobile */
+        justify-content: space-between; /* Adjust how tabs are spaced */
     }
 
     /* Make dropdown content appear on click for mobile */
@@ -154,7 +154,7 @@ nav {
 
     /* Adjust button layout for mobile */
     .tabbtn, .dropbtn {
-        flex: 0 0 45%; /* Two buttons per row on mobile */
+        flex: 0 0 45%; /* Two buttons per row */
         margin-bottom: 10px; /* Add spacing between rows */
     }
 
