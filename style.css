@@ -22,13 +22,7 @@ html, body {
     cursor: pointer;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
 }
-.certifications-list {
-    padding-left: 13; /* Remove extra padding */
-    margin-left: 0;  /* Remove margin on the left */
-}
 
-.certifications-list li {
-    padding-left: 3px; /* Adds space between bullet and text */
 }
 #back-to-top:hover {
     background-color: white;
