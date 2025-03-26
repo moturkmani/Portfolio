@@ -4,8 +4,8 @@ const projectTitles = document.querySelectorAll('.project-title');
 // Add click event listener to each project title
 projectTitles.forEach((title) => {
     title.addEventListener('click', () => {
-        const projectId = title.getAttribute('data-project');
-        const projectDetails = document.getElementById(projectId);
+        const projectId = title.getAttribute('data-project'); // Get the corresponding project ID
+        const projectDetails = document.getElementById(projectId); // Get the details container
 
         // If the clicked project details are already open, close them
         if (projectDetails.style.display === 'block') {
