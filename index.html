@@ -10,10 +10,29 @@
 <body>
 
     <nav>
-        <a href="#" onclick="showTab('about-me')"><span>About Me</span></a>
-        <a href="#" onclick="showTab('experience')"><span>Experience</span></a>
-        <a href="#" onclick="showTab('projects')"><span>Projects</span></a>
-        <a href="#" onclick="showTab('hobbies')"><span>Hobbies</span></a>
+        <ul>
+            <li><button class="tabbtn" onclick="showTab('about-me')">About Me</button></li>
+            <li><button class="tabbtn" onclick="showTab('experience')">Experience</button></li>
+            
+            <!-- Projects Dropdown -->
+            <li class="dropdown">
+                <button class="dropbtn" onclick="toggleDropdown('projects')">Projects <span class="arrow">&#9660;</span></button>
+                <div class="dropdown-content" id="projects">
+                    <a href="#" onclick="loadContent('projects.html', 'projects-content')">Project 1</a>
+                    <a href="#" onclick="loadContent('projects.html', 'projects-content')">Project 2</a>
+                    <a href="#" onclick="loadContent('projects.html', 'projects-content')">Project 3</a>
+                </div>
+            </li>
+            
+            <!-- Hobbies Dropdown -->
+            <li class="dropdown">
+                <button class="dropbtn" onclick="toggleDropdown('hobbies')">Hobbies <span class="arrow">&#9660;</span></button>
+                <div class="dropdown-content" id="hobbies">
+                    <a href="#" onclick="loadContent('hobbies.html', 'hobbies-content')">Hobby 1</a>
+                    <a href="#" onclick="loadContent('hobbies.html', 'hobbies-content')">Hobby 2</a>
+                </div>
+            </li>
+        </ul>
     </nav>
 
     <section>
@@ -47,31 +66,20 @@
             <img src="assets/youtube-icon.png" alt="YouTube" class="social-icon">
         </a>
     </div>
-    
+
     <!-- Back to Top Button -->
     <button id="back-to-top" onclick="scrollToTop()">Back to Top</button>
     
     <script>
+        // Show tab content based on selected tab
         function showTab(tabId) {
-            // Hide all tab contents and remove the active class from all
             const tabs = document.querySelectorAll('.tab-content');
             tabs.forEach(tab => tab.classList.remove('active'));
-
-            // Show the clicked tab and add the active class
             document.getElementById(tabId).classList.add('active');
-
-            // Dynamically load content for the clicked tab
-            if (tabId === 'about-me') {
-                loadContent('about-me.html', 'about-me-content');
-            } else if (tabId === 'experience') {
-                loadContent('experience.html', 'experience-content');
-            } else if (tabId === 'projects') {
-                loadContent('projects.html', 'projects-content');
-            } else if (tabId === 'hobbies') {
-                loadContent('hobbies.html', 'hobbies-content');
-            }
+            loadContent(tabId + '.html', tabId + '-content');
         }
 
+        // Load content dynamically for each tab
         function loadContent(fileName, elementId) {
             fetch(fileName)
                 .then(response => response.text())
@@ -85,6 +93,12 @@
         document.addEventListener('DOMContentLoaded', () => {
             loadContent('about-me.html', 'about-me-content');
         });
+
+        // Toggle visibility of dropdowns for mobile view
+        function toggleDropdown(tabId) {
+            const dropdown = document.getElementById(tabId);
+            dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+        }
 
         // Back to Top functionality
         window.onscroll = function() {
