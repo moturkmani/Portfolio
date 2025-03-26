@@ -8,6 +8,7 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 /* Tab Content */
@@ -36,7 +37,7 @@ nav {
     display: flex;
     justify-content: center; /* Ensures the tabs are centered */
     gap: 20px; /* Controls the spacing between the tabs */
-    flex-wrap: wrap; /* Wraps tabs on smaller screens */
+    flex-wrap: nowrap; /* Prevents wrapping on desktop */
     width: 100%;
     max-width: 1200px; /* Align with tab-content width */
     margin: 0 auto; /* Center navigation */
@@ -44,8 +45,7 @@ nav {
 
 /* Tab Buttons (All Tabs) */
 .tabbtn, .dropbtn {
-    flex: 1 1 auto; /* Allows equal distribution of space */
-    max-width: 200px; /* Maximum width for each button */
+    flex: 1 1 200px; /* Allows equal distribution of space, with a minimum size of 200px */
     padding: 10px;
     text-align: center;
     background-color: #333; /* Dark gray background */
@@ -292,53 +292,3 @@ nav {
     transform: scale(1.05); /* Slight zoom effect on hover */
 }
 
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.modal-content {
-    width: 80%;
-    max-width: 1000px;
-    margin: 20px auto;
-    max-height: 90vh;
-    object-fit: contain;
-}
-
-.modal-arrow {
-    position: absolute;
-    top: 50%;
-    color: white;
-    font-size: 40px;
-    padding: 10px;
-    cursor: pointer;
-    user-select: none;
-}
-
-#prev-image {
-    left: 10px;
-}
-
-#next-image {
-    right: 10px;
-}
-
-.close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    color: white;
-    font-size: 40px;
-    cursor: pointer;
-    user-select: none;
-}
