@@ -126,17 +126,14 @@ nav a:hover {
     font-weight: bold;
     margin-bottom: 10px;
     padding: 10px;
-    background-color: #2a2a2a;
-    color: white;
-    border-radius: 5px;
+    background-color: transparent; /* No background box around title */
+    color: #2a2a2a;
+    transition: color 0.3s ease;
     text-align: center;
-    border: 2px solid #FFD700;
-    transition: background-color 0.3s ease;
 }
 
 .project-title:hover {
-    background-color: #FFD700;
-    color: black;
+    color: #FFD700; /* Golden color on hover */
 }
 
 /* Project Details - Initially hidden */
@@ -175,10 +172,17 @@ nav a:hover {
 
 /* Responsive Design for Mobile */
 @media (max-width: 768px) {
+    .projects-container {
+        align-items: center; /* Center the project titles on mobile */
+    }
+
     .project-title {
-        width: 80%;
+        width: 80%; /* Make project titles full width on mobile */
         text-align: center;
-        margin: 0 auto; /* Center the project titles */
+    }
+
+    .project-details {
+        width: 90%; /* Ensure details are centered on mobile */
     }
 
     .project-images-container {
