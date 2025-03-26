@@ -79,6 +79,56 @@ nav a:hover {
     color: white;
 }
 
+/* Dropdown menu styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.dropbtn:hover {
+    background-color: #555;
+}
+
+.arrow {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    min-width: 200px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+/* Show dropdown on hover (desktop) */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 /* Social Media Icons - Always in a Row */
 .social-media {
     display: flex;
@@ -111,7 +161,20 @@ nav a:hover {
         padding: 10px;
         max-width: 120px;
     }
+    
+    .dropdown-content {
+        display: none;
+    }
+
+    .dropdown.open .dropdown-content {
+        display: block;
+    }
+
+    .arrow {
+        display: inline-block;
+    }
 }
+
 /* Container for all projects */
 .projects-container {
     max-width: 1200px;
@@ -123,37 +186,6 @@ nav a:hover {
 /* Individual project styling */
 .project {
     margin-bottom: 10px;
-}
-
-/* Collapsible button styling */
-.collapsible {
-    background-color: #777;
-    color: white;
-    cursor: pointer;
-    padding: 10px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    transition: background-color 0.3s;
-}
-
-.collapsible:hover {
-    background-color: #555;
-}
-
-/* Active state for the collapsible button */
-.active {
-    background-color: #555;
-}
-
-/* Content inside the collapsible section */
-.content {
-    padding: 0 18px;
-    display: none;
-    overflow: hidden;
-    background-color: #f9f9f9;
 }
 
 /* Image container styling */
@@ -178,6 +210,7 @@ nav a:hover {
         flex: 1;
     }
 }
+
 .certifications-list {
     padding-left: 15px; /* Remove extra padding */
     margin-left: 0;  /* Remove margin on the left */
@@ -186,6 +219,7 @@ nav a:hover {
 .certifications-list li {
     padding-left: 1px; /* Adds space between bullet and text */
 }
+
 #back-to-top {
     position: fixed;
     bottom: 40px; /* Increase this value to move the button up */
@@ -203,89 +237,4 @@ nav a:hover {
 #back-to-top:hover {
     background-color: white;
     color: black;
-}
-/* Hobby Block Section */
-.hobby-block {
-    margin: 20px 0;
-}
-
-.hobby-block h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.hobby-block p {
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-
-/* Image Grid */
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Creates responsive grid */
-    gap: 15px;
-}
-
-.image-block img {
-    width: 100%;
-    height: 200px; /* Forces the images to fit into the square grid */
-    object-fit: cover; /* Ensures images cover the entire square */
-    cursor: pointer;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-.image-block img:hover {
-    transform: scale(1.05); /* Slight zoom effect on hover */
-}
-
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.modal-content {
-    width: 80%;
-    max-width: 1000px;
-    margin: 20px auto;
-    max-height: 90vh;
-    object-fit: contain;
-}
-
-.modal-arrow {
-    position: absolute;
-    top: 50%;
-    color: white;
-    font-size: 40px;
-    padding: 10px;
-    cursor: pointer;
-    user-select: none;
-}
-
-#prev-image {
-    left: 10px;
-}
-
-#next-image {
-    right: 10px;
-}
-
-.close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    color: white;
-    font-size: 40px;
-    cursor: pointer;
-    user-select: none;
 }
