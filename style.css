@@ -112,89 +112,70 @@ nav a:hover {
         max-width: 120px;
     }
 }
-/* Container for the project list */
+/* Container for all projects */
 .projects-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 1200px; /* Ensure container width matches other tabs */
-    width: calc(100% - 40px); /* Leaves black space on both sides */
-    margin: 0 auto; /* Center the container */
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f1f1f1;
 }
 
-/* Project Title Styling */
-.project-title {
-    cursor: pointer;
-    font-size: 24px;
-    font-weight: bold;
+/* Individual project styling */
+.project {
     margin-bottom: 10px;
+}
+
+/* Collapsible button styling */
+.collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
     padding: 10px;
-    background-color: transparent; /* No background box around title */
-    color: #2a2a2a;
-    transition: color 0.3s ease;
-    text-align: center;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: background-color 0.3s;
 }
 
-.project-title:hover {
-    color: #FFD700; /* Golden color on hover */
+.collapsible:hover {
+    background-color: #555;
 }
 
-/* Project Details - Initially hidden */
-.project-details {
-    display: none; /* Hide details by default */
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #e0e0e0;
-    border-radius: 5px;
-    color: #333;
-    width: 100%; /* Ensure it expands to full width */
+/* Active state for the collapsible button */
+.active {
+    background-color: #555;
 }
 
-/* Image grid for each project */
+/* Content inside the collapsible section */
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f9f9f9;
+}
+
+/* Image container styling */
 .project-images-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid layout */
-    gap: 15px;
-    justify-items: center; /* Centers the grid items */
-    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .project-images-container img {
-    width: 100%;
-    height: 200px; /* Set fixed size for images */
-    object-fit: cover; /* Ensure images fill the grid box without distortion */
-    border: 2px solid gold; /* Golden border around the images */
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out; /* Hover effect */
+    max-width: 100%;
+    height: auto;
 }
 
-/* Hover effect for images */
-.project-images-container img:hover {
-    transform: scale(1.05); /* Slight zoom effect */
-}
-
-/* Responsive Design for Mobile */
-@media (max-width: 768px) {
+/* Desktop view: projects displayed side by side */
+@media screen and (min-width: 768px) {
     .projects-container {
-        align-items: center; /* Center the project titles on mobile */
+        display: flex;
+        gap: 10px;
     }
-
-    .project-title {
-        width: 80%; /* Make project titles full width on mobile */
-        text-align: center;
-    }
-
-    .project-details {
-        width: 90%; /* Ensure details are centered on mobile */
-    }
-
-    .project-images-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 images per row on mobile */
-    }
-
-    .project-images-container img {
-        height: 150px; /* Adjust image size for mobile */
+    .project {
+        flex: 1;
     }
 }
 .certifications-list {
