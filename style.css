@@ -35,9 +35,9 @@ nav {
     background-color: #000000;
     padding: 10px 0;
     display: flex;
-    justify-content: space-evenly; /* Distribute buttons evenly */
-    gap: 20px; /* Controls the spacing between the tabs */
-    flex-wrap: nowrap; /* Prevents wrapping on desktop */
+    flex-wrap: wrap; /* This ensures content wraps in smaller screens */
+    justify-content: center;
+    gap: 10px;
     width: 100%;
     max-width: 1200px; /* Align with tab-content width */
     margin: 0 auto; /* Center navigation */
@@ -45,7 +45,7 @@ nav {
 
 /* Tab Buttons (All Tabs) */
 .tabbtn, .dropbtn {
-    flex: 1 1 200px; /* Allows equal distribution of space, with a minimum size of 200px */
+    flex: 0 1 45%; /* Adjust buttons to 45% width for better mobile layout */
     padding: 10px;
     text-align: center;
     background-color: #333; /* Dark gray background */
@@ -168,11 +168,14 @@ nav {
     margin: auto;
     padding: 20px;
     background-color: #f1f1f1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Ensure the items are centered */
 }
 
-/* Individual project styling */
 .project {
-    margin-bottom: 10px;
+    flex: 1 1 300px; /* Allows each project to take up at least 300px */
+    margin: 10px;
 }
 
 /* Collapsible button styling */
@@ -291,4 +294,3 @@ nav {
 .image-block img:hover {
     transform: scale(1.05); /* Slight zoom effect on hover */
 }
-
