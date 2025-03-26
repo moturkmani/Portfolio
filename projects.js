@@ -1,22 +1,28 @@
-// Get all project titles and project details
-const projectTitles = document.querySelectorAll('.project-title');
+// Get all project images
+const images = document.querySelectorAll('.expandable-image');
+const modal = document.getElementById('image-modal');
+const expandedImage = document.getElementById('expanded-image');
+const closeModal = document.querySelector('.close-modal');
 
-// Add click event listener to each project title
-projectTitles.forEach((title, index) => {
-    title.addEventListener('click', () => {
-        const projectDetails = title.nextElementSibling; // Get the corresponding project details
-        const allDetails = document.querySelectorAll('.project-details');
-
-        // If clicked project details are already open, close them
-        if (projectDetails.style.display === 'block') {
-            projectDetails.style.display = 'none';
-        } else {
-            // Close all other project details
-            allDetails.forEach(detail => {
-                detail.style.display = 'none';
-            });
-            // Open the clicked project's details
-            projectDetails.style.display = 'block';
-        }
+// Open the modal and display the clicked image
+images.forEach((image) => {
+    image.addEventListener('click', () => {
+        expandedImage.src = image.src; // Set the clicked image as the modal content
+        modal.style.display = 'flex'; // Show the modal
+        document.body.classList.add('modal-background-blue'); // Apply blue background tint
     });
+});
+
+// Close the modal when clicking the close button (X)
+closeModal.addEventListener('click', () => {
+    modal.style.display = 'none'; // Hide the modal
+    document.body.classList.remove('modal-background-blue'); // Remove the background tint
+});
+
+// Close modal if clicked anywhere outside the image
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.style.display = 'none'; // Hide the modal
+        document.body.classList.remove('modal-background-blue'); // Remove the background tint
+    }
 });
