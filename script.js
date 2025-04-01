@@ -1,9 +1,14 @@
-function showTab(tabId) {
-    // Hide all tab contents
-    document.querySelectorAll('.tab-content').forEach(tab => {
-        tab.classList.add('hidden');
-    });
-
-    // Show the selected tab
-    document.getElementById(tabId).classList.remove('hidden');
+// Function to load content dynamically
+function loadTab(page) {
+    fetch(page)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('content').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading page:', error));
 }
+
+// Load "About Me" by default
+document.addEventListener("DOMContentLoaded", () => {
+    loadTab('about-me.html');
+});
