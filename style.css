@@ -9,7 +9,7 @@ body {
 }
 
 /* Bold Text Styling */
-b {
+b, strong {
     color: gold;
 }
 
