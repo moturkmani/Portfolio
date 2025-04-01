@@ -4,112 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <link rel="icon" href="favicon.png" type="image/png">
-    <link rel="stylesheet" href="style.css"> <!-- External CSS file -->
+	<link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <nav>
-        <ul>
-            <li><button class="tabbtn" onclick="showTab('about-me')">About Me</button></li>
-            <li><button class="tabbtn" onclick="showTab('experience')">Experience</button></li>
-            
-            <!-- Projects Dropdown -->
-            <li class="dropdown">
-                <button class="dropbtn" onclick="toggleDropdown('projects')">Projects <span class="arrow">&#9660;</span></button>
-                <div class="dropdown-content" id="projects">
-                    <a href="#" onclick="loadContent('projects.html', 'projects-content')">Project 1</a>
-                    <a href="#" onclick="loadContent('projects.html', 'projects-content')">Project 2</a>
-                    <a href="#" onclick="loadContent('projects.html', 'projects-content')">Project 3</a>
-                </div>
-            </li>
-            
-            <!-- Hobbies Dropdown -->
-            <li class="dropdown">
-                <button class="dropbtn" onclick="toggleDropdown('hobbies')">Hobbies <span class="arrow">&#9660;</span></button>
-                <div class="dropdown-content" id="hobbies">
-                    <a href="#" onclick="loadContent('hobbies.html', 'hobbies-content')">Hobby 1</a>
-                    <a href="#" onclick="loadContent('hobbies.html', 'hobbies-content')">Hobby 2</a>
-                </div>
-            </li>
-        </ul>
+        <button class="tab" onclick="showTab('about')">About Me</button>
+        <button class="tab" onclick="showTab('experience')">Experience</button>
+        <button class="tab" onclick="showTab('projects')">Projects</button>
+        <button class="tab" onclick="showTab('hobbies')">Hobbies</button>
     </nav>
 
-    <section>
-        <!-- About Me Tab (Visible by default) -->
-        <div id="about-me" class="tab-content active">
-            <div id="about-me-content"></div>
-        </div>
-
-        <!-- Experience Tab -->
-        <div id="experience" class="tab-content">
-            <div id="experience-content"></div>
-        </div>
-
-        <!-- Projects Tab -->
-        <div id="projects" class="tab-content">
-            <div id="projects-content"></div>
-        </div>
-
-        <!-- Hobbies Tab -->
-        <div id="hobbies" class="tab-content">
-            <div id="hobbies-content"></div>
-        </div>
+    <section id="about" class="tab-content">
+        <h1>About Me</h1>
+        <p>Hello! I am <b>Mojtaba</b>, an electrical engineer with a passion for technology and creativity.</p>
     </section>
 
-    <!-- Social Media Icons -->
-    <div class="social-media">
-        <a href="https://www.linkedin.com/in/mojtaba-t-b51746107/" target="_blank">
-            <img src="assets/linkedin-icon.png" alt="LinkedIn" class="social-icon">
-        </a>
-        <a href="https://www.youtube.com/@MoVoltageMoPower" target="_blank">
-            <img src="assets/youtube-icon.png" alt="YouTube" class="social-icon">
-        </a>
-    </div>
+    <section id="experience" class="tab-content hidden">
+        <h1>Experience</h1>
+        <p>I have experience working at <b>L3Harris Technologies</b>, where I focus on electrical engineering solutions.</p>
+    </section>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" onclick="scrollToTop()">Back to Top</button>
-    
-    <script>
-        // Show tab content based on selected tab
-        function showTab(tabId) {
-            const tabs = document.querySelectorAll('.tab-content');
-            tabs.forEach(tab => tab.classList.remove('active'));
-            document.getElementById(tabId).classList.add('active');
-            loadContent(tabId + '.html', tabId + '-content');
-        }
+    <section id="projects" class="tab-content hidden">
+        <h1>Projects</h1>
+        <p>I've worked on various tech-related projects, including my <b>tech review YouTube channel</b> and <b>EveryDayKidsStoryTime</b>.</p>
+    </section>
 
-        // Load content dynamically for each tab
-        function loadContent(fileName, elementId) {
-            fetch(fileName)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById(elementId).innerHTML = data;
-                })
-                .catch(error => console.log("Error loading content:", error));
-        }
+    <section id="hobbies" class="tab-content hidden">
+        <h1>Hobbies</h1>
+        <p>Outside of work, I enjoy <b>playing OSRS</b>, exploring new tech, and creating engaging podcasts.</p>
+    </section>
 
-        // Load About Me content on initial load
-        document.addEventListener('DOMContentLoaded', () => {
-            loadContent('about-me.html', 'about-me-content');
-        });
-
-        // Toggle visibility of dropdowns for mobile view
-        function toggleDropdown(tabId) {
-            const dropdown = document.getElementById(tabId);
-            dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
-        }
-
-        // Back to Top functionality
-        window.onscroll = function() {
-            const button = document.getElementById("back-to-top");
-            button.style.display = window.scrollY > 200 ? "block" : "none";
-        };
-
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
