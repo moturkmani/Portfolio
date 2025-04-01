@@ -9,30 +9,14 @@
 </head>
 <body>
     <nav>
-        <button class="tab" onclick="showTab('about')">About Me</button>
-        <button class="tab" onclick="showTab('experience')">Experience</button>
-        <button class="tab" onclick="showTab('projects')">Projects</button>
-        <button class="tab" onclick="showTab('hobbies')">Hobbies</button>
+        <button class="tab" onclick="loadTab('about-me.html')">About Me</button>
+        <button class="tab" onclick="loadTab('experience.html')">Experience</button>
+        <button class="tab" onclick="loadTab('projects.html')">Projects</button>
+        <button class="tab" onclick="loadTab('hobbies.html')">Hobbies</button>
     </nav>
 
-    <section id="about" class="tab-content">
-        <h1>About Me</h1>
-        <p>Hello! I am <b>Mojtaba</b>, an electrical engineer with a passion for technology and creativity.</p>
-    </section>
-
-    <section id="experience" class="tab-content hidden">
-        <h1>Experience</h1>
-        <p>I have experience working at <b>L3Harris Technologies</b>, where I focus on electrical engineering solutions.</p>
-    </section>
-
-    <section id="projects" class="tab-content hidden">
-        <h1>Projects</h1>
-        <p>I've worked on various tech-related projects, including my <b>tech review YouTube channel</b> and <b>EveryDayKidsStoryTime</b>.</p>
-    </section>
-
-    <section id="hobbies" class="tab-content hidden">
-        <h1>Hobbies</h1>
-        <p>Outside of work, I enjoy <b>playing OSRS</b>, exploring new tech, and creating engaging podcasts.</p>
+    <section id="content">
+        <!-- Default page loads here -->
     </section>
 
     <script src="script.js"></script>
