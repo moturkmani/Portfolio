@@ -1,32 +1,36 @@
-/* General Styling */
+/* Global Styling */
 body {
     background-color: black;
     color: white;
     font-family: Arial, sans-serif;
-    text-align: center;
+    text-align: left;
     margin: 0;
     padding: 20px;
+    font-size: clamp(12px, 2vw, 16px); /* Adjusts between 12px (smallest) and 16px (largest) */
+    line-height: 1.6; /* Improves readability */
 }
 
-/* Bold Text Styling */
-strong {
+/* Bold and Gold Text Styling */
+b {
     color: gold;
 }
-b {
-    color: FFD700;
+
+/* Headings */
+h1 {
+    font-size: clamp(20px, 4vw, 32px);
+    color: gold;
 }
 
-/* Ensure all text is left-aligned */
-body, h1, h2, h3, p, ul, li, div, section {
-    text-align: left;
+h2 {
+    font-size: clamp(18px, 3.5vw, 28px);
+    color: gold;
 }
 
-/* Remove bullet points from all lists */
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+p {
+    font-size: clamp(12px, 2vw, 16px);
+    line-height: 1.8; /* Extra space for readability */
 }
+
 /* Navigation Styling */
 nav {
     display: grid;
@@ -46,23 +50,25 @@ nav {
 .tab {
     background-color: white;
     color: black;
-    border: 2px solid gold; /* Adds a gold border */
-    padding: 10px;
-    font-size: 16px;
+    font-weight: bold; /* Make text bold */
+    border: 2px solid gold;
+    padding: clamp(8px, 1.5vw, 12px);
+    font-size: clamp(12px, 2vw, 16px);
+    border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
-    border-radius: 5px; /* Optional: Adds rounded corners */
+    text-align: center;
 }
 
 .tab:hover {
     background-color: gold;
     color: black;
-    border-color: white; /* Changes border color on hover */
+    border-color: white;
 }
 
-/* Content Area Styling */
+/* Content Area */
 #content {
-    padding: 20px;
+    padding: clamp(10px, 2vw, 20px);
     border: 2px solid gold;
     border-radius: 5px;
 }
