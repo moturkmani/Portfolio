@@ -21,9 +21,15 @@ h1 {
     color: gold;
 }
 
+/* Gold tone for H2 headers */
 h2 {
+    color: gold; 
     font-size: clamp(18px, 3.5vw, 28px);
-    color: gold;
+}
+
+.job-title {
+    color: #DAA520; /* Darker gold */
+    font-weight: bold;
 }
 
 p {
