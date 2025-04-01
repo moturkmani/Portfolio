@@ -6,7 +6,7 @@ body {
     text-align: left;
     margin: 0;
     padding: 20px;
-    font-size: clamp(12px, 2vw, 22px); /* Adjusts between 12px (smallest) and 22px (largest) */
+    font-size: clamp(14px, 2vw, 22px); /* Adjusts between 14px (smallest) and 22px (largest) */
     line-height: 1.5; /* Improves readability */
 }
 
@@ -24,18 +24,18 @@ h1 {
 /* Gold tone for H2 headers */
 h2 {
     color: gold; 
-    font-size: clamp(18px, 3.5vw, 30px);
+    font-size: clamp(19px, 3.5vw, 30px);
 }
 
 .job-title {
     color: #DAA520; /* Darker gold */
-    font-size: clamp(14px, 3.5vw, 24px);
+    font-size: clamp(15px, 3.5vw, 24px);
     font-weight: bold;
 }
 
 p {
     margin-bottom: 1em; /* Adds space below each paragraph */
-    font-size: clamp(12px, 2vw, 22px);
+    font-size: clamp(14px, 2vw, 22px);
     line-height: 1.6; /* space for readability */
 }
 
