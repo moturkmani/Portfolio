@@ -6,12 +6,12 @@ body {
     text-align: left;
     margin: 0;
     padding: 20px;
-    font-size: clamp(12px, 2vw, 16px); /* Adjusts between 12px (smallest) and 16px (largest) */
+    font-size: clamp(14px, 2vw, 24px); /* Adjusts between 12px (smallest) and 16px (largest) */
     line-height: 1.6; /* Improves readability */
 }
 
 /* Bold and Gold Text Styling */
-b {
+b, strong {
     color: gold;
 }
 
@@ -27,7 +27,7 @@ h2 {
 }
 
 p {
-    font-size: clamp(12px, 2vw, 16px);
+    font-size: clamp(14px, 2vw, 24px);
     line-height: 1.8; /* Extra space for readability */
 }
 
@@ -46,14 +46,19 @@ nav {
         max-width: 600px;
     }
 }
-
+.certifications-list {
+    list-style-type: none; /* Removes bullet points */
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Removes default margin */
+    text-align: left; /* Aligns text to the left */
+}
 .tab {
     background-color: white;
     color: black;
     font-weight: bold; /* Make text bold */
     border: 2px solid gold;
     padding: clamp(8px, 1.5vw, 12px);
-    font-size: clamp(12px, 2vw, 16px);
+    font-size: clamp(14px, 2vw, 24px);
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
@@ -68,7 +73,7 @@ nav {
 
 /* Content Area */
 #content {
-    padding: clamp(10px, 2vw, 20px);
+    padding: clamp(14px, 2vw, 24px);
     border: 2px solid gold;
     border-radius: 5px;
 }
