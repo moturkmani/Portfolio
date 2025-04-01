@@ -43,24 +43,9 @@ nav {
     background-color: gold;
 }
 
-/* Tab Content Styling */
-.tab-content {
-    display: none;
+/* Content Area Styling */
+#content {
     padding: 20px;
     border: 2px solid gold;
     border-radius: 5px;
-}
-
-.tab-content h1 {
-    color: gold;
-}
-
-/* Make the default tab visible */
-#about {
-    display: block;
-}
-
-/* Utility Class */
-.hidden {
-    display: none;
 }
