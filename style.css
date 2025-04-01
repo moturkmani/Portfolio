@@ -60,6 +60,7 @@ nav {
     margin: 0; /* Removes default margin */
     text-align: left; /* Aligns text to the left */
 }
+
 .tab {
     background-color: white;
     color: black;
@@ -84,4 +85,12 @@ nav {
     padding: clamp(14px, 2vw, 24px);
     border: 2px solid gold;
     border-radius: 5px;
+}
+
+/* Image Styling to fit within the golden borders */
+.hobby-image {
+    max-width: 100%; /* Ensures image does not overflow */
+    height: auto; /* Maintains the aspect ratio */
+    display: block; /* Prevents any unwanted gaps or space below the image */
+    margin: 0 auto; /* Centers the image if needed */
 }
