@@ -13,6 +13,17 @@ b, strong {
     color: gold;
 }
 
+/* Ensure all text is left-aligned */
+body, h1, h2, h3, p, ul, li, div, section {
+    text-align: left;
+}
+
+/* Remove bullet points from all lists */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
 /* Navigation Styling */
 nav {
     display: grid;
