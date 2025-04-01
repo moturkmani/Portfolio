@@ -9,8 +9,11 @@ body {
 }
 
 /* Bold Text Styling */
-b, strong {
+strong {
     color: gold;
+}
+b {
+    color: FFD700;
 }
 
 /* Ensure all text is left-aligned */
