@@ -34,6 +34,7 @@ h2 {
 }
 
 p {
+    margin-bottom: 1em; /* Adds space below each paragraph */
     font-size: clamp(13px, 2vw, 24px);
     line-height: 1.6; /* space for readability */
 }
