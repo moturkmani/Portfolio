@@ -92,10 +92,8 @@ nav {
 @media (max-width: 768px) {
     .hobby-images {
         grid-template-columns: repeat(2, 1fr);
-        margin-left: 2px; /* or try 4px for more push */
     }
 }
-
 @media (min-width: 769px) {
     .hobby-images {
         grid-template-columns: repeat(5, 1fr);
@@ -104,13 +102,12 @@ nav {
 
 /* Fixed box for each image */
 .image-box {
-    width: 100%;
-    aspect-ratio: 1 / 1; /* Ensures square box */
     background: white;
     border: 3px solid gold;
     border-radius: 10px;
     overflow: hidden;
-    display: flex;
+    width: 180px;           /* Adjust as needed */
+    height: 180px;
     justify-content: center;
     align-items: center;
 }
