@@ -26,6 +26,7 @@ h1 {
 h2 {
     color: gold; 
     font-size: clamp(19px, 3.5vw, 30px);
+    margin-bottom: 0.3em;
 }
 
 .job-title {
@@ -35,9 +36,12 @@ h2 {
 }
 
 p {
-    margin-bottom: 1em; /* Adds space below each paragraph */
-    font-size: clamp(14px, 2vw, 22px);
-    line-height: 1.6; /* space for readability */
+    margin-bottom: 0.5em;
+    line-height: 1.4;
+    font-size: clamp(14px, 2vw, 20px);
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Navigation Styling */
@@ -58,8 +62,8 @@ nav {
 .certifications-list {
     list-style-type: none; /* Removes bullet points */
     padding: 0; /* Removes default padding */
-    margin: 0; /* Removes default margin */
-    text-align: left; /* Aligns text to the left */
+    margin: 0 auto; /* Removes default margin */
+    text-align: center; /* Aligns text to the left */
 }
 
 .tab {
