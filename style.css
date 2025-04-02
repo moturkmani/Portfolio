@@ -175,8 +175,8 @@ nav {
 
 #footer {
     width: 100%;
-    margin-top: 10px;
-    padding-bottom: 45px; /* how far it sits from bottom upwards */
+    margin-top: 5px; /* pushes the social icons down as you lower pixel */
+    padding-bottom: 30px; /* how far it sits from bottom upwards */
     display: flex;
     justify-content: center;
     align-items: center;
