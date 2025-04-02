@@ -90,6 +90,10 @@ nav {
     padding: 10px;
 }
 
+.hobbies-page {
+    text-align: center;
+}
+
 /* Responsive columns */
 @media (max-width: 768px) {
     .hobby-images {
@@ -154,6 +158,12 @@ nav {
     border-radius: 10px;
     box-shadow: 0 0 15px gold;
 }
+
+#backToTop {
+    font-size: 14px;
+    padding: 7px 14px;
+    max-width: 150px;
+    
 .page-wrapper {
     min-height: calc(100vh - 100px); /* leaves space for footer */
     display: flex;
