@@ -108,7 +108,7 @@ nav {
     
 @media (min-width: 768px) {
     .hobby-image {
-        max-width: 600px; /* Limit max width on larger screens */
+        max-width: 500px; /* Limit max width on larger screens */
         margin: 0 auto; /* Center the image */
     }
 }
