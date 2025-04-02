@@ -108,7 +108,7 @@ nav {
 
 /* Fixed box for each image */
 .image-box {
-    width: 100%;
+    /*width: 100%;*/
     aspect-ratio: 1 / 1; /* Ensures square box */
     background: white;
     border: 3px solid gold;
