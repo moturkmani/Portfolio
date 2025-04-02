@@ -104,9 +104,8 @@ nav {
 
 /* Fixed box for each image */
 .image-box {
-    /*width: 100%;*/
-    width: 500px;           /* Adjust as needed */
-    height: 500px;
+    width: 250px;           /* Adjust as needed */
+    height: 250px;
     aspect-ratio: 1 / 1; /* Ensures square box */
     background: white;
     border: 3px solid gold;
