@@ -175,8 +175,8 @@ nav {
 
 #footer {
     width: 100%;
-    margin-top: 40px;
-    padding-bottom: 100px; /* how far it sits from bottom upwards */
+    /*margin-top: 40px;*/
+    padding-bottom: 60px; /* how far it sits from bottom upwards */
     display: flex;
     justify-content: center;
     align-items: center;
