@@ -8,24 +8,24 @@ function loadTab(page) {
         .catch(error => console.error('Error loading page:', error));
 }
 
-// Load "About Me" by default on first load
+// Load "About Me" by default
 document.addEventListener("DOMContentLoaded", () => {
     loadTab('about-me.html');
 
-    // ✅ Create modal container for image expansion
+    // Modal setup
     const modal = document.createElement('div');
     modal.classList.add('modal');
     modal.innerHTML = '<img src="" alt="Expanded Image">';
     document.body.appendChild(modal);
 
-    // ✅ Close modal when clicking outside the image
+    // Close modal on outside click
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
             modal.style.display = 'none';
         }
     });
 
-    // ✅ Handle image click events (delegated from body)
+    // Image click opens modal
     document.body.addEventListener('click', function (e) {
         if (e.target.classList.contains('hobby-image')) {
             const modalImg = modal.querySelector('img');
