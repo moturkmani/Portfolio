@@ -94,6 +94,9 @@ nav {
     .hobby-images {
         grid-template-columns: repeat(2, 1fr);
     }
+    .image-box {
+        width: 100%;
+    }
 }
 
 @media (min-width: 769px) {
@@ -103,6 +106,7 @@ nav {
     .image-box {
         width: 250px;
         height: 250px;
+        margin: 0 auto;
     }
 }
 
@@ -115,7 +119,6 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%; /* Let it auto fit for mobile by default */
     aspect-ratio: 1 / 1;
 }
 
