@@ -100,13 +100,14 @@ nav {
     .hobby-images {
         grid-template-columns: repeat(5, 1fr);
     }
+    .image-box {
+        width: 250px;
+        height: 250px;
+    }
 }
 
 /* Fixed box for each image */
 .image-box {
-    width: 250px;           /* Adjust as needed */
-    height: 250px;
-    aspect-ratio: 1 / 1; /* Ensures square box */
     background: white;
     border: 3px solid gold;
     border-radius: 10px;
@@ -114,6 +115,8 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%; /* Let it auto fit for mobile by default */
+    aspect-ratio: 1 / 1;
 }
 
 /* Image fills the box */
