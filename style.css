@@ -90,20 +90,12 @@ nav {
 /* Hobby Block Styling */
 .hobby-block {
     padding: clamp(14px, 2vw, 24px);
-    border: 2px solid gold;
-    border-radius: 5px;
     text-align: center; /* Center-align the header and text */
 }
 /* Center-aligning Header (h2) and Paragraph (p) */
 .hobby-block h2,
 .hobby-block p {
     text-align: center; /* Ensure both header and paragraph are centered */
-}
-.hobby-image {
-    max-width: 100%; /* Ensures image does not overflow */
-    height: auto; /* Maintains the aspect ratio */
-    display: block; /* Prevents any unwanted gaps or space below the image */
-    margin: 0 auto; /* Centers the image if needed */
 }
 .hobby-image {
     max-width: 100%;
