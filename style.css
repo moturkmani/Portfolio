@@ -94,3 +94,18 @@ nav {
     display: block; /* Prevents any unwanted gaps or space below the image */
     margin: 0 auto; /* Centers the image if needed */
 }
+
+/* Limit image size on desktop to prevent lag */
+@media (min-width: 768px) {
+    .hobby-image {
+        max-width: 800px; /* Limit max width on larger screens */
+        margin: 0 auto; /* Center the image */
+    }
+}
+
+/* Media Query for mobile (smaller screens) */
+@media (max-width: 768px) {
+    .hobby-image {
+        max-width: 100%; /* Full width on small screens */
+    }
+}
