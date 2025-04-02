@@ -94,6 +94,18 @@ nav {
     text-align: center;
 }
 
+.hobbies-page h2 {
+    margin-bottom: 0.4em;
+}
+
+.hobbies-page p {
+    margin-bottom: 0.5em;
+    line-height: 1.4;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* Image fills the box */
 .hobby-image {
     width: 100%;
