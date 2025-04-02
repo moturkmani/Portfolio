@@ -34,3 +34,24 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+// Back to Top Button Logic
+window.addEventListener('scroll', () => {
+    const btn = document.getElementById('backToTop');
+    const isScrollable = document.body.scrollHeight > window.innerHeight;
+
+    if (window.scrollY > 100 && isScrollable) {
+        btn.style.display = 'block';
+    } else {
+        btn.style.display = 'none';
+    }
+});
+
+// Smooth scroll to top on click
+document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('backToTop');
+    if (btn) {
+        btn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+});
