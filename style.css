@@ -104,8 +104,8 @@ nav {
         grid-template-columns: repeat(5, 1fr);
     }
     .image-box {
-        width: 250px;
-        height: 250px;
+        width: 500px;
+        height: 500px;
         margin: 0 auto;
     }
 }
