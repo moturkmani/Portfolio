@@ -118,11 +118,11 @@ nav {
 
 @media (min-width: 769px) {
     .hobby-images {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(5, 1fr);
     }
     .image-box {
-        width: 500px;
-        height: 500px;
+        width: 250px;
+        height: 250px;
         margin: 0 auto;
     }
 }
