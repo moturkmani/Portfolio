@@ -84,18 +84,15 @@ nav {
     display: grid;
     gap: 20px;
     justify-content: center;
-    margin: 20px auto;           /* <-- centers it horizontally */
+    margin: 20px 0;
     padding: 10px;
-    max-width: 100%;             /* prevents overflow */
-    box-sizing: border-box;      /* include padding in total width */
 }
 
 /* Responsive columns */
 @media (max-width: 768px) {
     .hobby-images {
-        grid-template-columns: repeat(2, minmax(140px, 1fr)); /* Makes grid boxes more consistent */
-        padding-left: 5px;  /* Slight push right */
-        padding-right: 5px; /* Ensures even spacing */
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: 2px; /* or try 4px for more push */
     }
 }
 
