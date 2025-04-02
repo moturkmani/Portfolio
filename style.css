@@ -78,25 +78,24 @@ nav {
     background-color: gold;
     color: black;
     border-color: white;
-}
-/* Center align content */
-#content {
-    text-align: center;
-}
 
 /* Grid container */
 .hobby-images {
     display: grid;
     gap: 20px;
     justify-content: center;
-    margin: 20px 0;
+    margin: 20px auto;           /* <-- centers it horizontally */
     padding: 10px;
+    max-width: 100%;             /* prevents overflow */
+    box-sizing: border-box;      /* include padding in total width */
 }
 
 /* Responsive columns */
 @media (max-width: 768px) {
     .hobby-images {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(140px, 1fr)); /* Makes grid boxes more consistent */
+        padding-left: 5px;  /* Slight push right */
+        padding-right: 5px; /* Ensures even spacing */
     }
 }
 
