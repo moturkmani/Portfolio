@@ -78,6 +78,7 @@ nav {
     background-color: gold;
     color: black;
     border-color: white;
+}
 
 /* Grid container */
 .hobby-images {
@@ -94,6 +95,7 @@ nav {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
 @media (min-width: 769px) {
     .hobby-images {
         grid-template-columns: repeat(5, 1fr);
@@ -102,12 +104,13 @@ nav {
 
 /* Fixed box for each image */
 .image-box {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Ensures square box */
     background: white;
     border: 3px solid gold;
     border-radius: 10px;
     overflow: hidden;
-    width: 180px;           /* Adjust as needed */
-    height: 180px;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -143,4 +146,5 @@ nav {
     border-radius: 10px;
     box-shadow: 0 0 15px gold;
 }
+
 
