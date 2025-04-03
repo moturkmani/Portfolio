@@ -290,5 +290,7 @@ nav {
   font-size: clamp(19px, 3.5vw, 30px); /* Matches your h2 styles */
   font-weight: bold;
   display: inline-block;
+  animation: glowPulse 3s infinite linear;
 }
+
 
