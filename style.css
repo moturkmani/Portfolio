@@ -205,6 +205,25 @@ nav {
     border-color: white;
 }
 
+.project-block {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.project-title {
+    color: gold;
+    font-size: clamp(20px, 4vw, 32px);
+    margin-bottom: 10px;
+}
+
+.project-description {
+    font-size: clamp(14px, 2vw, 20px);
+    color: white;
+    margin-bottom: 20px;
+}
+
 @keyframes glowPulse {
   0% {
     color: red;
