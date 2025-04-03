@@ -55,18 +55,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-
-document.querySelectorAll('.runescape-text').forEach(el => {
-  const text = el.textContent;
-  el.innerHTML = ''; // clear existing content
-
-  const rainbowColors = ['red', 'orange', 'yellow', 'limegreen', 'cyan', 'blue', 'violet'];
-
-  for (let i = 0; i < text.length; i++) {
-    const span = document.createElement('span');
-    span.textContent = text[i];
-    span.style.color = rainbowColors[i % rainbowColors.length];
-    span.style.animationDelay = `${i * 50}ms`;
-    el.appendChild(span);
-  }
-});
