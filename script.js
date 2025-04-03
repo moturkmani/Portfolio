@@ -55,22 +55,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-// RuneScape-style rainbow wiggle animation per letter
+
 document.querySelectorAll('.runescape-text').forEach(el => {
-  el.innerHTML = el.textContent
-    .split('')
-    .map((char, i) => `<span style="
-      display:inline-block;
-      animation: wiggleRGB 1s infinite ease-in-out;
-      animation-delay:${i * 50}ms;
-      color: ${rainbowColor(i)};
-    ">${char}</span>`)
-    .join('');
+  const text = el.textContent;
+  el.innerHTML = ''; // clear existing content
+
+  const rainbowColors = ['red', 'orange', 'yellow', 'limegreen', 'cyan', 'blue', 'violet'];
+
+  for (let i = 0; i < text.length; i++) {
+    const span = document.createElement('span');
+    span.textContent = text[i];
+    span.style.color = rainbowColors[i % rainbowColors.length];
+    span.style.animationDelay = `${i * 50}ms`;
+    el.appendChild(span);
+  }
 });
-
-// Helper function to return a rainbow color based on index
-function rainbowColor(i) {
-  const colors = ['red', 'orange', 'yellow', 'limegreen', 'cyan', 'blue', 'violet'];
-  return colors[i % colors.length];
-}
-
