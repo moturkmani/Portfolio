@@ -224,6 +224,15 @@ nav {
     margin-bottom: 20px;
 }
 
+.hover-glow {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6); /* soft gold glow */
+    transform: scale(1.02);
+}
+
 @keyframes glowPulse {
   0% {
     color: red;
