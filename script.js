@@ -55,3 +55,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+// RuneScape-style rainbow wiggle animation per letter
+document.querySelectorAll('.runescape-text').forEach(el => {
+  el.innerHTML = el.textContent
+    .split('')
+    .map((char, i) => `<span style="
+      display:inline-block;
+      animation: wiggleRGB 1s infinite ease-in-out;
+      animation-delay:${i * 50}ms;
+      color: ${rainbowColor(i)};
+    ">${char}</span>`)
+    .join('');
+});
+
+// Helper function to return a rainbow color based on index
+function rainbowColor(i) {
+  const colors = ['red', 'orange', 'yellow', 'limegreen', 'cyan', 'blue', 'violet'];
+  return colors[i % colors.length];
+}
+
