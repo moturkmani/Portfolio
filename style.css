@@ -206,10 +206,11 @@ nav {
 }
 
 .project-block {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 0 20px;
-    text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 40px;
+  text-align: center;
 }
 
 .project-title {
