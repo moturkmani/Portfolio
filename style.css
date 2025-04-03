@@ -206,9 +206,9 @@ nav {
 }
 
 .project-block {
-    max-width: 800px;
+    max-width: 900px;
     margin: 40px auto;
-    padding: 0 20px;
+    padding: 0 15px;
     text-align: center;
 }
 
@@ -235,20 +235,24 @@ nav {
 
 /* MEDIA size control mobile and desktop */
 .video-container {
-    border: 3px solid gold;
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 0 auto;
-    background-color: #000;
-    aspect-ratio: 16 / 9;
-    width: 100%;
-    max-width: 560px; /* default for mobile/tablet */
+  border: 3px solid gold;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #000;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  max-width: 720px; /* adjust as needed */
+  margin: 0 auto 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (min-width: 1024px) {
-  .video-container {
-    max-width: 720px; /* bump it up on desktops/larger screens */
-  }
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
 }
 
 @keyframes glowPulse {
