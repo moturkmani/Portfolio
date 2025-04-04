@@ -86,7 +86,7 @@ nav {
 /* Grid container */
 .hobby-images {
     display: grid;
-    gap: 25px; /* column & row spacing */
+    gap: 30px; /* column & row spacing */
     justify-content: center;
     margin: 20px 0;
     padding: 10px;
