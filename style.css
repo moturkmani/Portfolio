@@ -5,7 +5,7 @@ html, body {
     color: white;
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0px;
     font-size: clamp(14px, 2vw, 22px); /* Adjusts between 14px (smallest) and 22px (largest) */
     line-height: 1.5; /* Improves readability */
 }
@@ -171,6 +171,17 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+}
+.site-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+@media (min-width: 768px) {
+    .site-container {
+        padding: 0 32px;
+    }
 }
 
 #footer {
