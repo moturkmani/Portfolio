@@ -86,7 +86,7 @@ nav {
 /* Grid container */
 .hobby-images {
     display: grid;
-    gap: 30px; /* column & row spacing */
+    gap: 35px; /* column & row spacing */
     justify-content: center;
     margin: 20px 0;
     padding: 10px;
@@ -120,7 +120,7 @@ nav {
 
 @media (min-width: 769px) {
     .hobby-images {
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
     .image-box {
         width: 250px;
