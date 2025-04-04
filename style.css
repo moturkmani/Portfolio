@@ -44,11 +44,14 @@ p {
 
 /* Navigation Styling */
 nav {
+    margin-top: 30px;
+    margin-bottom: 30px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 15px;
     max-width: 400px;
-    margin: 0 auto 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media (min-width: 768px) {
