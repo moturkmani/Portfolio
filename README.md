@@ -1,90 +1,31 @@
-# 💻 Personal Portfolio Website
+# My Portfolio
 
-A responsive, interactive personal portfolio built with HTML, CSS, and JavaScript. It features dynamic tab loading, a modal image viewer, a "Back to Top" button, and stylish theming with gold and black.
+Welcome to my portfolio! This is a collection of my projects, experience, hobbies, and more, designed to showcase my skills and achievements.
 
-## 🔥 Live Preview
+## Table of Contents
 
-Check it out on GitHub Pages or host locally to see the full effect, including glowing headers and image modals.
+- [About Me](#about-me)
+- [Experience](#experience)
+- [Projects](#projects)
+- [Hobbies](#hobbies)
 
-## 🌐 Project Structure
+## Features
 
-```
-/assets
-    ├── github-icon.png
-    ├── linkedin-icon.png
-    └── youtube-icon.png
-/index.html
-/style.css
-/script.js
-/about-me.html
-/experience.html
-/projects.html
-/hobbies.html
-/favicon.png
-```
+- **Responsive design**: The portfolio is fully responsive, adapting to various screen sizes.
+- **Dynamic Content**: Each section of the portfolio loads dynamically when you click on the respective tab, making the navigation experience smooth and efficient.
+- **Back to Top**: A back-to-top button appears when you scroll down, allowing for easy navigation.
+- **Social Links**: Links to my social profiles, including [GitHub](https://github.com/moturkmani), [LinkedIn](https://www.linkedin.com/in/mojtaba-t-b51746107/), and [YouTube](https://www.youtube.com/@MoVoltageMoPower), are available in the footer.
 
-## ✨ Features
+## Technologies Used
 
-- **📄 Tab Navigation:** Load page content dynamically without refreshing
-- **🖼️ Modal Image Viewer:** Click on hobby images to expand in a stylish modal
-- **🔝 Scroll to Top Button:** Smooth scroll animation when scrolled down
-- **🎨 Stylish UI:** Black and gold aesthetic with responsive typography
-- **🌈 Animated Effects:** Glowing title animation for highlighted sections
+- **HTML**: Structured content for the portfolio.
+- **CSS**: Styled using custom CSS for a unique and modern design.
+- **JavaScript**: Used for dynamic page loading and smooth navigation.
 
-## 📂 Files Explained
+## Setup
 
-### `index.html`
-- Contains layout structure, tab buttons, and dynamic content container.
-- Includes footer with social media icons (GitHub, LinkedIn, YouTube).
+To view the portfolio locally, follow these steps:
 
-### `style.css`
-- Responsive styles using `clamp()` and media queries.
-- Custom `glowPulse` animation for glowing title effect.
-- Styled tabs, image containers, modal, and social icons.
-
-### `script.js`
-- Loads HTML content into the `#content` section on button click.
-- Implements a modal popup for full-size image viewing.
-- Adds logic for "Back to Top" button visibility and smooth scrolling.
-
-## 📸 Screenshots
-
-> Include screenshots or screen recordings here for a better preview.
-
-## 🚀 How to Run Locally
-
-```bash
-git clone https://github.com/your-username/your-portfolio-repo.git
-cd your-portfolio-repo
-open index.html # or open in your browser
-```
-
-> Or use a local development server (like VS Code Live Server) for dynamic loading to work properly.
-
-## 🛠️ Customization
-
-To change the glowing title effect:
-
-Edit `.glow-title` in `style.css`:
-
-```css
-.glow-title {
-  animation: glowPulse 2s infinite linear;
-}
-```
-
-To apply it to any heading, just add:
-
-```html
-<h2 class="glow-title">Your Glowing Title</h2>
-```
-
-## 🔗 Connect With Me
-
-- [GitHub](https://github.com/moturkmani)
-- [LinkedIn](https://www.linkedin.com/in/mojtaba-t-b51746107/)
-- [YouTube](https://www.youtube.com/@MoVoltageMoPower)
-
----
-
-📌 **Note:** This project uses JavaScript `fetch()` to load internal HTML files. For full functionality, run it on a local server (e.g., using VS Code Live Server) or host it on a web platform like GitHub Pages or Netlify.
+1. Clone the repository to your local machine:
+   ```bash
+   git clone https://github.com/moturkmani/Portfolio.git
