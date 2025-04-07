@@ -4,10 +4,10 @@ Welcome to my portfolio! This is a collection of my projects, experience, hobbie
 
 ## Table of Contents
 
-- [About Me](#about-me)
-- [Experience](#experience)
-- [Projects](#projects)
-- [Hobbies](#hobbies)
+- [About Me](#about-me.html)
+- [Experience](#experience.html)
+- [Projects](#projects.html)
+- [Hobbies](#hobbies.html)
 
 ## Features
 
