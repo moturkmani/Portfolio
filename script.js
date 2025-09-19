@@ -12,6 +12,32 @@ function loadTab(page) {
 document.addEventListener("DOMContentLoaded", () => {
     loadTab('about-me.html');
 
+    // Hamburger Menu Toggle
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking nav links
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+    });
+
     // Modal setup
     const modal = document.createElement('div');
     modal.classList.add('modal');
@@ -34,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
 // Back to Top Button Logic
 window.addEventListener('scroll', () => {
     const btn = document.getElementById('backToTop');
