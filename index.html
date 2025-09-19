@@ -10,11 +10,23 @@
 <body>
  <div class="site-container">
 	<div class="page-wrapper">
-    <nav>
-        <button class="tab" onclick="loadTab('about-me.html')">About Me</button>
-        <button class="tab" onclick="loadTab('experience.html')">Experience</button>
-        <button class="tab" onclick="loadTab('projects.html')">Projects</button>
-        <button class="tab" onclick="loadTab('hobbies.html')">Hobbies</button>
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Hamburger Menu Button (Mobile Only) -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <!-- Navigation Menu -->
+            <div class="nav-menu" id="navMenu">
+                <button class="nav-link" onclick="loadTab('about-me.html')">About Me</button>
+                <button class="nav-link" onclick="loadTab('experience.html')">Experience</button>
+                <button class="nav-link" onclick="loadTab('projects.html')">Projects</button>
+                <button class="nav-link" onclick="loadTab('hobbies.html')">Hobbies</button>
+            </div>
+        </div>
     </nav>
 
     <section id="content">
@@ -36,7 +48,7 @@
 	    <a href="https://www.youtube.com/@MoVoltageMoPower" target="_blank">
 	        <img src="assets/youtube-icon.png" alt="YouTube" class="social-icon">
 	    </a>
-	</div
+	</div>
 </footer>
 	
  <script src="script.js"></script>
