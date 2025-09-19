@@ -16,7 +16,7 @@ Welcome to my portfolio! This is a collection of my projects, experience, hobbie
 - **Back to Top**: A back-to-top button appears when you scroll down, allowing for easy navigation.
 - **Social Links**: Links to my social profiles, including [GitHub](https://github.com/moturkmani), [LinkedIn](https://www.linkedin.com/in/mojtaba-t-b51746107/), and [YouTube](https://www.youtube.com/@MoVoltageMoPower), are available in the footer.
 
-## Technologies Used
+## What Was Used:
 
 - **HTML**: Structured content for the portfolio.
 - **CSS**: Styled using custom CSS for a unique and modern design.
