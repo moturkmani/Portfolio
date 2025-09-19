@@ -68,7 +68,7 @@ p {
     background: linear-gradient(145deg, #ffffff, #f0f0f0);
     color: #1a1a1a;
     font-weight: 600;
-    border: 2px solid transparent;
+    border: 2px solid gold;
     padding: 12px 24px;
     font-size: clamp(14px, 2vw, 18px);
     border-radius: 12px;
