@@ -36,6 +36,7 @@ function loadTab(page) {
             // Load videos in any branch that starts open (e.g. <details open>)
             content.querySelectorAll('details[open]').forEach(loadVideos);
             updateTreeBtn();   // set the button text for this page
+            setupReveal(content);  // ANIMATION: scroll-in for this page
 
             // Remember the page in the URL (#projects) so refresh/back works
             history.replaceState(null, '', '#' + page.replace('.html', ''));
@@ -106,6 +107,38 @@ function updateTreeBtn() {
     const branches = [...document.querySelectorAll('#content details.branch')];
     const allOpen = branches.length && branches.every(d => d.open);
     btn.textContent = allOpen ? 'Collapse all' : 'Expand all';
+}
+
+/* ---------------------------------------------------------
+   3c) SCROLL-IN ANIMATION
+   Marks the intro, toolbar and each top-level branch with .reveal
+   (hidden + shifted down). An IntersectionObserver watches them and
+   adds .in when they come into view, so they fade up one by one.
+   --------------------------------------------------------- */
+let revealObserver = null;
+
+function setupReveal(container) {
+    if (revealObserver) revealObserver.disconnect();   // stop watching the old page
+
+    const items = container.querySelectorAll('.intro, .tree-toolbar, .tree > .branch');
+
+    // Old browsers without IntersectionObserver: just show everything
+    if (!('IntersectionObserver' in window)) return;
+
+    revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in');
+                revealObserver.unobserve(entry.target);   // animate only once
+            }
+        });
+    }, { threshold: 0.1 });
+
+    items.forEach((el, i) => {
+        el.classList.add('reveal');
+        el.style.setProperty('--i', Math.min(i, 8));   // stagger order (capped so late items don't wait too long)
+        revealObserver.observe(el);
+    });
 }
 
 /* ---------------------------------------------------------
