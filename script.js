@@ -35,6 +35,7 @@ function loadTab(page) {
 
             // Load videos in any branch that starts open (e.g. <details open>)
             content.querySelectorAll('details[open]').forEach(loadVideos);
+            updateTreeBtn();   // set the button text for this page
 
             // Remember the page in the URL (#projects) so refresh/back works
             history.replaceState(null, '', '#' + page.replace('.html', ''));
@@ -68,6 +69,7 @@ function openBranch(details) {
     const body = details.querySelector(':scope > .branch-content');
     details.open = true;
     loadVideos(details);
+    updateTreeBtn();
     if (!body) return;
 
     // ANIMATION: slide down from 0 to full height while fading in
@@ -81,7 +83,7 @@ function openBranch(details) {
 function closeBranch(details) {
     if (!details.open) return;
     const body = details.querySelector(':scope > .branch-content');
-    if (!body) { details.open = false; return; }
+    if (!body) { details.open = false; updateTreeBtn(); return; }
 
     // ANIMATION: slide up from current height to 0 while fading out,
     // and only actually close <details> when the animation is done
@@ -90,7 +92,20 @@ function closeBranch(details) {
         [{ height: full + 'px', opacity: 1 }, { height: '0px', opacity: 0 }],
         { duration: ANIM_MS, easing: 'ease-in' }
     );
-    anim.onfinish = () => { details.open = false; };
+    anim.onfinish = () => { details.open = false; updateTreeBtn(); };
+}
+
+/* ---------------------------------------------------------
+   3b) EXPAND/COLLAPSE BUTTON LABEL
+   If every branch is open -> button says "Collapse all",
+   otherwise it says "Expand all". Called after any change.
+   --------------------------------------------------------- */
+function updateTreeBtn() {
+    const btn = document.querySelector('#content .tree-btn[data-tree="toggle"]');
+    if (!btn) return;
+    const branches = [...document.querySelectorAll('#content details.branch')];
+    const allOpen = branches.length && branches.every(d => d.open);
+    btn.textContent = allOpen ? 'Collapse all' : 'Expand all';
 }
 
 /* ---------------------------------------------------------
@@ -140,11 +155,14 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // b) Expand all / Collapse all buttons
+        // b) Expand all / Collapse all toggle button
+        //    If anything is still closed -> open everything; otherwise close everything.
         const treeBtn = e.target.closest('.tree-btn');
         if (treeBtn) {
-            const branches = document.querySelectorAll('#content details.branch');
-            branches.forEach(d => treeBtn.dataset.tree === 'expand' ? openBranch(d) : closeBranch(d));
+            const branches = [...document.querySelectorAll('#content details.branch')];
+            const allOpen = branches.every(d => d.open);
+            branches.forEach(d => allOpen ? closeBranch(d) : openBranch(d));
+            treeBtn.textContent = allOpen ? 'Expand all' : 'Collapse all';  // flip label right away
             return;
         }
 
