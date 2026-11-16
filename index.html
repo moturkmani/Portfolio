@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mo Turkmani | Portfolio</title>
+    <meta name="description" content="Mojtaba (Mo) Turkmani - Electrical engineer, tinkerer and YouTuber.">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="site-container">
+    <div class="page-wrapper">
+
+        <!-- ===== Header: name + tagline (fades in on load, see .hero in style.css) ===== -->
+        <header class="hero">
+            <img src="favicon.png" alt="" class="hero-logo">
+            <h1>Mo Turkmani</h1>
+            <p class="tagline">Electrical engineer · tinkerer · YouTuber</p>
+        </header>
+
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Hamburger Menu Button (Mobile Only) -->
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+
+                <!-- Navigation Menu
+                     data-page = which file gets loaded into #content (see loadTab in script.js) -->
+                <div class="nav-menu" id="navMenu">
+                    <button class="nav-link" data-page="about-me.html">About Me</button>
+                    <button class="nav-link" data-page="experience.html">Experience</button>
+                    <button class="nav-link" data-page="projects.html">Projects</button>
+                    <button class="nav-link" data-page="hobbies.html">Hobbies</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Each page's HTML gets dropped in here -->
+        <main id="content"></main>
+
+        <!-- Back to Top Button (shown by script.js after you scroll down) -->
+        <button id="backToTop" class="tab" aria-label="Back to top">↑ Back to Top</button>
+    </div>
+
+    <footer id="footer">
+        <div id="social-links">
+            <a href="https://github.com/moturkmani" target="_blank" rel="noopener">
+                <img src="assets/github-icon.png" alt="GitHub" class="social-icon">
+            </a>
+            <a href="https://www.linkedin.com/in/mojtaba-t-b51746107/" target="_blank" rel="noopener">
+                <img src="assets/linkedin-icon.png" alt="LinkedIn" class="social-icon">
+            </a>
+            <a href="https://www.youtube.com/@MoVoltageMoPower" target="_blank" rel="noopener">
+                <img src="assets/youtube-icon.png" alt="YouTube" class="social-icon">
+            </a>
+        </div>
+    </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

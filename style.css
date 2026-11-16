@@ -1,0 +1,606 @@
+/* =========================================================
+   MO TURKMANI PORTFOLIO - style.css
+   Same black + gold look and Segoe UI font as before.
+   New: header, collapsible "tree" branches, skill chips,
+   and a few animations (all labeled ANIMATION below).
+   ========================================================= */
+
+/* ---------- Color variables (change these to re-theme the whole site) ---------- */
+:root {
+    --gold: #ffd700;          /* main gold */
+    --gold-dark: #daa520;     /* darker gold for job titles */
+    --gold-soft: rgba(255, 215, 0, 0.25); /* faint gold for lines/borders */
+    --bg: #000;
+    --panel: #121212;         /* slightly lighter than black for cards */
+    --panel-hover: #1b1b1b;
+    --text: #fff;
+    --muted: #b8b8b8;         /* grey for secondary text */
+}
+
+/* ---------- Global ---------- */
+html, body {
+    min-height: 100%;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: clamp(14px, 2vw, 20px);
+    line-height: 1.5;
+}
+
+html { scroll-behavior: smooth; }  /* smooth scrolling for anchors / back-to-top */
+
+b, strong { color: var(--gold); }
+
+h1 {
+    font-size: clamp(26px, 5vw, 42px);
+    color: var(--gold);
+    margin: 0.2em 0 0;
+}
+
+h2 {
+    color: var(--gold);
+    font-size: clamp(19px, 3.5vw, 30px);
+    margin-bottom: 0.3em;
+}
+
+h3 {
+    color: var(--gold-dark);
+    font-size: clamp(14px, 2vw, 18px);
+    margin: 1em 0 0.4em;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.job-title {
+    color: var(--gold-dark);
+    font-weight: bold;
+}
+
+p {
+    margin: 0 0 0.8em;
+    line-height: 1.55;
+    font-size: clamp(14px, 2vw, 19px);
+}
+
+/* ---------- Layout ---------- */
+.site-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+@media (min-width: 768px) {
+    .site-container { padding: 0 32px; }
+}
+
+.page-wrapper {
+    min-height: calc(100vh - 100px); /* leaves space for footer */
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- Header / hero ---------- */
+.hero {
+    text-align: center;
+    padding-top: 30px;
+    animation: fadeUp 0.8s ease both;   /* ANIMATION: header slides up + fades in on load */
+}
+
+.hero-logo {
+    width: 64px;
+    height: 64px;
+    animation: zap 4s ease-in-out infinite;  /* ANIMATION: bolt gives a little "zap" pulse every few seconds */
+}
+
+.tagline {
+    color: var(--muted);
+    margin: 0.2em 0 0;
+    letter-spacing: 0.05em;
+}
+
+/* ---------- Navigation (unchanged look) ---------- */
+.navbar { margin: 24px 0; position: relative; }
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 40px;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    color: #1a1a1a;
+    font-weight: 600;
+    font-family: inherit;
+    border: 2px solid var(--gold);
+    padding: 12px 24px;
+    font-size: clamp(14px, 2vw, 18px);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    min-width: 120px;
+}
+
+/* ANIMATION: gold shine that sweeps across a nav button on hover */
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+    transition: left 0.5s;
+}
+.nav-link:hover::before { left: 100%; }
+
+.nav-link:hover,
+.nav-link.active {            /* .active = the page you're on (set in script.js) */
+    background: linear-gradient(145deg, #ffd700, #ffed4a);
+    color: #1a1a1a;
+    border-color: var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+}
+.nav-link:active { transform: translateY(0); }
+
+/* Hamburger (mobile only) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+.hamburger-line {
+    width: 30px;
+    height: 3px;
+    background: linear-gradient(145deg, #ffd700, #ffed4a);
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+/* ANIMATION: three lines morph into an X when the menu opens */
+.hamburger.active .hamburger-line:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+.hamburger.active .hamburger-line:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.active .hamburger-line:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    /* ANIMATION: mobile menu slides in from the right */
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        right: -100%;
+        width: 280px;
+        max-width: 90vw;
+        background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+        border: 1px solid var(--gold-soft);
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+    }
+    .nav-menu.active { right: 20px; opacity: 1; visibility: visible; }
+    .nav-link {
+        width: 100%;
+        padding: 16px 24px;
+        background: linear-gradient(145deg, #2d2d2d, #3d3d3d);
+        color: white;
+        border: 1px solid rgba(255, 215, 0, 0.3);
+        min-width: unset;
+    }
+    .nav-link:hover, .nav-link.active {
+        color: #1a1a1a;
+        transform: translateX(5px);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .nav-menu { gap: 15px; }
+    .nav-link { min-width: 110px; padding: 10px 20px; }
+}
+
+/* ---------- Page content ---------- */
+/* ANIMATION: each page fades/slides in when you switch tabs
+   (script.js re-adds the .page-enter class every load) */
+.page-enter { animation: fadeUp 0.45s ease both; }
+
+.intro {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 1em;
+}
+
+/* ---------- Tree toolbar (Expand all / Collapse all) ---------- */
+.tree-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.tree-btn {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--gold-soft);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.tree-btn:hover {
+    color: #1a1a1a;
+    background: var(--gold);
+    border-color: var(--gold);
+}
+
+/* =========================================================
+   TREE / BRANCHES
+   Built on <details>/<summary>, so it works with no JavaScript.
+   script.js only adds the smooth open/close animation.
+   ========================================================= */
+.tree {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.branch {
+    background: var(--panel);
+    border: 1px solid var(--gold-soft);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+.branch:hover { border-color: rgba(255, 215, 0, 0.55); }
+.branch[open] {
+    border-color: var(--gold);
+    box-shadow: 0 0 14px rgba(255, 215, 0, 0.15);   /* soft gold glow when open */
+}
+
+/* The clickable title row */
+.branch > summary {
+    list-style: none;              /* hide default triangle (Firefox) */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    padding: 14px 18px 14px 46px;  /* left room for the chevron */
+    position: relative;
+    user-select: none;
+    transition: background 0.2s;
+}
+.branch > summary::-webkit-details-marker { display: none; } /* hide default triangle (Chrome/Safari) */
+.branch > summary:hover { background: var(--panel-hover); }
+
+/* ANIMATION: gold chevron that rotates 90° when a branch opens */
+.branch > summary::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    border-right: 3px solid var(--gold);
+    border-bottom: 3px solid var(--gold);
+    transform: translateY(-50%) rotate(-45deg);   /* points right ▸ */
+    transition: transform 0.3s ease;
+}
+.branch[open] > summary::before {
+    transform: translateY(-70%) rotate(45deg);    /* points down ▾ */
+}
+
+.branch-title {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: clamp(16px, 2.6vw, 24px);
+}
+
+/* Small grey text on the right side (dates, places, counts) */
+.branch-meta {
+    color: var(--muted);
+    font-size: clamp(12px, 1.6vw, 15px);
+    margin-left: auto;
+    text-align: right;
+}
+
+/* Area that opens up under a title */
+.branch-content {
+    padding: 4px 22px 18px 46px;
+}
+
+/* ---------- Nested branches (sub-items like each job) ---------- */
+.branch.nested {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    position: relative;
+    margin-left: 4px;
+    border-left: 2px solid var(--gold-soft);   /* vertical "tree" line */
+}
+.branch.nested[open] { border-left-color: var(--gold); }
+
+/* little horizontal connector from the tree line to each title */
+.branch.nested > summary::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 12px;
+    border-top: 2px solid var(--gold-soft);
+}
+.branch.nested > summary { padding: 10px 12px 10px 40px; }
+.branch.nested > summary::before { left: 20px; width: 7px; height: 7px; }
+.branch.nested > .branch-content { padding: 2px 8px 14px 40px; }
+.branch.nested .job-title { font-size: clamp(15px, 2.2vw, 20px); }
+
+/* Mobile: stack meta under the title */
+@media (max-width: 600px) {
+    .branch-meta { margin-left: 0; text-align: left; flex-basis: 100%; }
+    .branch-content { padding-left: 22px; padding-right: 14px; }
+    .branch.nested > .branch-content { padding-left: 20px; }
+}
+
+/* ---------- Lists inside branches ---------- */
+.bullets { margin: 0 0 0.8em; padding-left: 1.2em; }
+.bullets li { margin-bottom: 0.35em; line-height: 1.5; font-size: clamp(14px, 2vw, 18px); }
+.bullets li::marker { color: var(--gold); }
+
+/* Skill chips */
+.chips {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.5em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.chips li {
+    border: 1px solid var(--gold-soft);
+    border-radius: 20px;
+    padding: 3px 12px;
+    font-size: clamp(12px, 1.6vw, 15px);
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+/* ANIMATION: chip lifts and turns gold on hover */
+.chips li:hover {
+    background: var(--gold);
+    color: #1a1a1a;
+    transform: translateY(-2px);
+}
+
+/* Certifications grid */
+.cert-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+}
+.cert-grid li {
+    background: #0a0a0a;
+    border: 1px solid var(--gold-soft);
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    font-size: clamp(13px, 1.8vw, 16px);
+}
+.cert-grid small { color: var(--muted); }
+
+/* ---------- Buttons (Back to Top) ---------- */
+.tab {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    font-family: inherit;
+    border: 2px solid var(--gold);
+    padding: 6px 14px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.tab:hover { background-color: var(--gold); border-color: white; }
+
+/* ANIMATION: back-to-top fades in/out (script.js toggles .show) */
+#backToTop {
+    display: block;
+    margin: 30px auto 0;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity 0.3s, transform 0.3s, background-color 0.3s;
+}
+#backToTop.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* ---------- Photo grids ---------- */
+.hobby-images {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 16px 0 4px;
+}
+.hobby-images.single { grid-template-columns: minmax(0, 250px); }
+@media (max-width: 768px) {
+    .hobby-images { grid-template-columns: repeat(2, 1fr); }
+}
+
+.image-box {
+    background: white;
+    border: 3px solid var(--gold);
+    border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+}
+.hobby-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    cursor: zoom-in;
+    transition: transform 0.3s ease;   /* ANIMATION: slight zoom on hover */
+}
+.hobby-image:hover { transform: scale(1.06); }
+
+/* Full screen photo viewer */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+}
+.modal.open { display: flex; }
+.modal img {
+    max-width: 95vw;
+    max-height: 95vh;
+    border-radius: 10px;
+    box-shadow: 0 0 15px var(--gold);
+    animation: popIn 0.25s ease both;   /* ANIMATION: photo pops in */
+}
+
+/* ---------- Videos ---------- */
+.video-container {
+    border: 3px solid var(--gold);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #000;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    max-width: 720px;
+    margin: 10px auto 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.video-container iframe,
+.video-container img {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+    object-fit: cover;
+}
+
+/* ANIMATION: soft gold glow on hover */
+.hover-glow { transition: box-shadow 0.3s ease, transform 0.3s ease; }
+.hover-glow:hover {
+    box-shadow: 0 0 12px 4px rgba(255, 215, 0, 0.4);
+    transform: scale(1.01);
+}
+
+/* ---------- Footer ---------- */
+#footer {
+    width: 100%;
+    margin-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+#social-links { display: flex; justify-content: center; gap: 20px; }
+.social-icon {
+    width: 25px;
+    height: 25px;
+    transition: transform 0.3s ease, background-color 0.3s;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    padding: 5px;
+    background-color: white;
+}
+.social-icon:hover {
+    transform: scale(1.12) rotate(-6deg);   /* ANIMATION: little tilt + grow */
+    background-color: var(--gold);
+    border-color: white;
+}
+
+/* =========================================================
+   KEYFRAMES (the animations referenced above)
+   ========================================================= */
+
+/* Fade in while sliding up a little */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Photo viewer pop */
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.92); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+/* Lightning bolt "zap": quick flicker + glow, then rest */
+@keyframes zap {
+    0%, 86%, 100% { transform: scale(1);    filter: drop-shadow(0 0 0 transparent); }
+    88%           { transform: scale(1.12); filter: drop-shadow(0 0 10px var(--gold)); }
+    90%           { transform: scale(0.97); filter: drop-shadow(0 0 2px var(--gold)); }
+    92%           { transform: scale(1.08); filter: drop-shadow(0 0 12px var(--gold)); }
+}
+
+/* Rainbow color cycle (used on the RuneScape title) */
+@keyframes glowPulse {
+    0%   { color: red;       text-shadow: 0 0 5px red,       0 0 10px red; }
+    14%  { color: orange;    text-shadow: 0 0 5px orange,    0 0 10px orange; }
+    28%  { color: yellow;    text-shadow: 0 0 5px yellow,    0 0 10px yellow; }
+    42%  { color: limegreen; text-shadow: 0 0 5px limegreen, 0 0 10px limegreen; }
+    57%  { color: cyan;      text-shadow: 0 0 5px cyan,      0 0 10px cyan; }
+    71%  { color: blue;      text-shadow: 0 0 5px blue,      0 0 10px blue; }
+    85%  { color: violet;    text-shadow: 0 0 5px violet,    0 0 10px violet; }
+    100% { color: red;       text-shadow: 0 0 5px red,       0 0 10px red; }
+}
+.glow-title { animation: glowPulse 3s infinite linear; }
+
+/* Accessibility: if someone turns off animations in their OS, respect it */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

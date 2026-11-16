@@ -1,0 +1,164 @@
+<!-- ===== PROJECTS =====
+     Each project is a branch: click the title to see the story + video.
+     VIDEOS LOAD LAZILY: the iframe uses data-src instead of src, so YouTube
+     only loads when you open that project (script.js swaps it in).
+     That keeps the page fast even with lots of videos. -->
+<div class="page">
+
+  <p class="intro">
+    A lot of my work projects are confidential, but here are a few personal ones I'm proud of.
+    Click a project to read about it and watch the video.
+  </p>
+
+  <div class="tree-toolbar">
+    <button class="tree-btn" data-tree="expand">Expand all</button>
+    <button class="tree-btn" data-tree="collapse">Collapse all</button>
+  </div>
+
+  <div class="tree">
+
+    <!-- ===== Group: Electronics & Embedded ===== -->
+    <details class="branch" open>
+      <summary>
+        <span class="branch-title">Electronics &amp; Embedded</span>
+        <span class="branch-meta">3 projects</span>
+      </summary>
+      <div class="branch-content">
+
+        <details class="branch nested">
+          <summary>
+            <span class="job-title">Programming a Raspberry Pi</span>
+            <span class="branch-meta">▶ Video</span>
+          </summary>
+          <div class="branch-content">
+            <p>
+              Back when I was deep into microcontrollers, I made this video showing how to flash RetroPie onto a Raspberry Pi 3 and load retro game emulators.
+              It was my first real taste of SSH, remote file transfers and installing an OS on a tiny board, and it pushed me toward embedded systems.
+            </p>
+            <div class="video-container hover-glow">
+              <iframe loading="lazy" data-src="https://www.youtube.com/embed/mRJ-boHpBEA"
+                title="RetroPie on the Raspberry Pi 3"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </details>
+
+        <details class="branch nested">
+          <summary>
+            <span class="job-title">Arduino &amp; RGB LEDs</span>
+            <span class="branch-meta">▶ Video</span>
+          </summary>
+          <div class="branch-content">
+            <p>
+              One of my first hands-on projects: programming an Arduino to drive addressable RGB LEDs and make them do fun light effects.
+              It was a blast, and it got me hooked on creative electronics.
+            </p>
+            <div class="video-container hover-glow">
+              <iframe loading="lazy" data-src="https://www.youtube.com/embed/6FdksbasKw0"
+                title="Arduino and RGB LEDs"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </details>
+
+        <details class="branch nested">
+          <summary>
+            <span class="job-title">Repairing a Window Switch Board</span>
+            <span class="branch-meta">▶ Video</span>
+          </summary>
+          <div class="branch-content">
+            <p>
+              When the master window switch in my dad's car died (the one that controls all the windows), I decided to figure out why.
+              Along the way I learned how to really use a multimeter and do careful visual inspections to track down and fix the bad parts.
+            </p>
+            <div class="video-container hover-glow">
+              <iframe loading="lazy" data-src="https://www.youtube.com/embed/oaVJAgj1DRU"
+                title="Master Window Switch Repair"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </details>
+
+      </div>
+    </details>
+
+    <!-- ===== Group: Teaching & Repair ===== -->
+    <details class="branch">
+      <summary>
+        <span class="branch-title">Teaching &amp; How-To</span>
+        <span class="branch-meta">2 projects</span>
+      </summary>
+      <div class="branch-content">
+
+        <details class="branch nested">
+          <summary>
+            <span class="job-title">Engineering Explainers</span>
+            <span class="branch-meta">▶ Video</span>
+          </summary>
+          <div class="branch-content">
+            <p>
+              In college I noticed some engineering topics got rushed in lecture. So I started making videos that walk through them the way I wish they'd been taught,
+              with simpler ways to approach the problems. I still upload these to help other engineering students.
+            </p>
+            <div class="video-container hover-glow">
+              <iframe loading="lazy" data-src="https://www.youtube.com/embed/LVB3_ANZDGQ"
+                title="Engineering explainer"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </details>
+
+        <details class="branch nested">
+          <summary>
+            <span class="job-title">Moped Battery Replacement</span>
+            <span class="branch-meta">▶ Video</span>
+          </summary>
+          <div class="branch-content">
+            <p>
+              A back-to-basics video on series vs. parallel battery setups, plus how to find and replace the bad batteries in an electric moped.
+            </p>
+            <div class="video-container hover-glow">
+              <iframe loading="lazy" data-src="https://www.youtube.com/embed/rjZS0pjYyoM"
+                title="Moped Battery Replacement"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </details>
+
+      </div>
+    </details>
+
+    <!-- ===== Group: Software ===== -->
+    <details class="branch">
+      <summary>
+        <span class="branch-title">Software &amp; Web</span>
+        <span class="branch-meta">1 project</span>
+      </summary>
+      <div class="branch-content">
+
+        <details class="branch nested">
+          <summary>
+            <span class="job-title">This Website</span>
+            <span class="branch-meta">HTML · CSS · JS</span>
+          </summary>
+          <div class="branch-content">
+            <p>
+              Yep, the site you're on right now! Building it taught me how HTML, CSS and JavaScript work together to make a page look and behave the way you want.
+              It's a fun side project, and I keep tweaking it as I learn more.
+            </p>
+            <div class="video-container hover-glow">
+              <img src="assets/hobby-images/webpage.gif" alt="Preview of this website" class="gif-preview">
+            </div>
+          </div>
+        </details>
+
+      </div>
+    </details>
+
+  </div>
+</div>
