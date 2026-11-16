@@ -186,12 +186,19 @@ p {
 .hamburger.active .hamburger-line:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
 
 @media (max-width: 768px) {
+    /* Mobile: lift the whole nav up into the header's top-right corner */
+    .site-container { position: relative; }
+    .navbar {
+        position: absolute;
+        top: 22px;
+        right: 16px;
+        margin: 0;
+        z-index: 1001;
+    }
+    .nav-container { min-height: 0; }
+    .hero { padding-bottom: 18px; }   /* nav no longer sits under the header, so add a little space */
     .hamburger {
         display: flex;
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
     }
     /* ANIMATION: mobile menu slides in from the right */
     .nav-menu {
@@ -593,7 +600,9 @@ p {
     85%  { color: violet;    text-shadow: 0 0 5px violet,    0 0 10px violet; }
     100% { color: red;       text-shadow: 0 0 5px red,       0 0 10px red; }
 }
-.glow-title { animation: glowPulse 3s infinite linear; }
+/* !important + its own reduced-motion exception below keep the rainbow
+   showing on phones (iOS/Android "Reduce motion" or battery saver used to kill it) */
+.glow-title { animation: glowPulse 3s infinite linear !important; }
 
 /* Accessibility: if someone turns off animations in their OS, respect it */
 @media (prefers-reduced-motion: reduce) {
@@ -602,5 +611,10 @@ p {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
+    }
+    /* Exception: keep the RuneScape rainbow (it's color only, no movement) */
+    .glow-title {
+        animation-duration: 3s !important;
+        animation-iteration-count: infinite !important;
     }
 }
